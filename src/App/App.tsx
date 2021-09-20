@@ -5,6 +5,7 @@ import { rem } from 'polished';
 
 import background from '../assets/kingmaker.bmp';
 import { Header } from './Header';
+import { Main } from './Main';
 
 const Wrapper = styled.div`
   background-image: url(${background});
@@ -28,11 +29,7 @@ export const App: FC = () => (
     <Wrapper>
       <Cylinder>
         <Header />
-        <main>
-          <p>
-            Main paragraph.
-          </p>
-        </main>
+        <Main />
       </Cylinder>
     </Wrapper>
   </RecoilRoot>

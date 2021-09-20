@@ -1,5 +1,4 @@
 import { ClassLevel } from '../level';
-import { Archetype } from './class.archetype';
 import { Prerequisite } from './class.prerequisite';
 
 export interface ClassOptions {
@@ -25,3 +24,17 @@ export class Class {
     levels,
   });
 }
+
+export interface ArchetypeOptions extends ClassOptions {
+  base: Class;
+}
+
+export class Archetype extends Class {
+  base: Class;
+
+  constructor({ base, name, levels, prerequisites }: ArchetypeOptions) {
+    super({ name, levels, prerequisites });
+    this.base = base;
+  }
+}
+

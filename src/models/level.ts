@@ -1,12 +1,11 @@
 import { Ability } from './ability';
-import { Class } from './class';
 
 export interface Level {
   skills?: { [skill: number]: number };
 }
 
 export interface CharacterLevel extends Level {
-  class: Class;
+  class: string;
   ability?: Ability;
 }
 
