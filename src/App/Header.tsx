@@ -4,9 +4,9 @@ import { rem } from 'polished';
 
 const Heading = styled.h1`
   font-size: ${rem(60)};
-  color: #e1a436;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: black;
+  color: #e6e2ad;
+  -webkit-text-stroke-width: ${rem(2.5)};
+  -webkit-text-stroke-color: #290a0a;
 `;
 
 export interface HeaderProps {
