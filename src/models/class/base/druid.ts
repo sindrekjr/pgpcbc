@@ -1,15 +1,34 @@
 import { Class } from '../class';
+import { Archetype } from '../class.archetype';
 
 export const Druid = new Class({ name: 'Druid' });
 
-export const BlightDruid = Druid.createArchetype('Blight Druid');
+export const BlightDruid = new Archetype({
+  base: Druid,
+  name: 'Blight Druid',
+});
 
-export const DefenderoftheTrueWorld = Druid.createArchetype('Defender of the True World');
+export const DefenderoftheTrueWorld = new Archetype({
+  base: Druid,
+  name: 'Defender of the True World',
+});
 
-export const Drovier = Druid.createArchetype('Drovier');
+export const Drovier = new Archetype({
+  base: Druid,
+  name: 'Drovier',
+});
 
-export const ElementalRampager = Druid.createArchetype('Elemental Rampager');
+export const ElementalRampager = new Archetype({
+  base: Druid,
+  name: 'Elemental Rampager',
+});
 
-export const Feyspeaker = Druid.createArchetype('Feyspeaker');
+export const Feyspeaker = new Archetype({
+  base: Druid,
+  name: 'Feyspeaker',
+});
 
-export const PrimalDruid = Druid.createArchetype('Primal Druid');
+export const PrimalDruid = new Archetype({
+  base: Druid,
+  name: 'Primal Druid',
+});

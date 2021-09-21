@@ -1,15 +1,34 @@
 import { Class } from '../class';
+import { Archetype } from '../class.archetype';
 
 export const Arcanist = new Class({ name: 'Arcanist' });
 
-export const BrownFurTransmuter = Arcanist.createArchetype('Brown Fur Transmuter');
+export const BrownFurTransmuter = new Archetype({
+  base: Arcanist,
+  name: 'Brown Fur Transmuter',
+});
 
-export const EldritchFont = Arcanist.createArchetype('Eldritch Font');
+export const EldritchFont = new Archetype({
+  base: Arcanist,
+  name: 'Eldritch Font',
+});
 
-export const NatureMage = Arcanist.createArchetype('Nature Mage');
+export const NatureMage = new Archetype({
+  base: Arcanist,
+  name: 'Nature Mage',
+});
 
-export const PhantasmalMage = Arcanist.createArchetype('Phantasmal Mage');
+export const PhantasmalMage = new Archetype({
+  base: Arcanist,
+  name: 'Phantasmal Mage',
+});
 
-export const UnletteredArcanist = Arcanist.createArchetype('Unlettered Arcanist');
+export const UnletteredArcanist = new Archetype({
+  base: Arcanist,
+  name: 'Unlettered Arcanist',
+});
 
-export const WhiteMage = Arcanist.createArchetype('White Mage');
+export const WhiteMage = new Archetype({
+  base: Arcanist,
+  name: 'White Mage',
+});

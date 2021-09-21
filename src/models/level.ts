@@ -12,3 +12,5 @@ export interface CharacterLevel extends Level {
 export interface ClassLevel extends Level {
   abilities?: { [ability: number]: number };
 }
+
+export type Levels<T extends Level = Level> = Record<number, T>;

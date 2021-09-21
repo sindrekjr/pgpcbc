@@ -1,17 +1,39 @@
 import { Class } from '../class';
+import { Archetype } from '../class.archetype';
 
 export const Slayer = new Class({ name: 'Slayer' });
 
-export const ArcaneEnforcer = Slayer.createArchetype('Arcane Enforcer');
+export const ArcaneEnforcer = new Archetype({
+  base: Slayer,
+  name: 'Arcane Enforcer',
+});
 
-export const Deliverer = Slayer.createArchetype('Deliverer');
+export const Deliverer = new Archetype({
+  base: Slayer,
+  name: 'Deliverer',
+});
 
-export const Executioner = Slayer.createArchetype('Executioner');
+export const Executioner = new Archetype({
+  base: Slayer,
+  name: 'Executioner',
+});
 
-export const Imitator = Slayer.createArchetype('Imitator');
+export const Imitator = new Archetype({
+  base: Slayer,
+  name: 'Imitator',
+});
 
-export const SpawnSlayer = Slayer.createArchetype('Spawn Slayer');
+export const SpawnSlayer = new Archetype({
+  base: Slayer,
+  name: 'Spawn Slayer',
+});
 
-export const StygianSlayer = Slayer.createArchetype('Stygian Slayer');
+export const StygianSlayer = new Archetype({
+  base: Slayer,
+  name: 'Stygian Slayer',
+});
 
-export const Vanguard = Slayer.createArchetype('Vanguard');
+export const Vanguard = new Archetype({
+  base: Slayer,
+  name: 'Vanguard',
+});

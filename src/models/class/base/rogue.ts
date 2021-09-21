@@ -1,17 +1,39 @@
 import { Class } from '../class';
+import { Archetype } from '../class.archetype';
 
 export const Rogue = new Class({ name: 'Rogue' });
 
-export const EldritchScoundrel = Rogue.createArchetype('Eldritch Scoundrel');
+export const EldritchScoundrel = new Archetype({
+  base: Rogue,
+  name: 'Eldritch Scoundrel',
+});
 
-export const KnifeMaster = Rogue.createArchetype('Knife Master');
+export const KnifeMaster = new Archetype({
+  base: Rogue,
+  name: 'Knife Master',
+});
 
-export const MasterofAll = Rogue.createArchetype('Master of All');
+export const MasterofAll = new Archetype({
+  base: Rogue,
+  name: 'Master of All',
+});
 
-export const Rowdy = Rogue.createArchetype('Rowdy');
+export const Rowdy = new Archetype({
+  base: Rogue,
+  name: 'Rowdy',
+});
 
-export const SylvanTrickster = Rogue.createArchetype('Sylvan Trickster');
+export const SylvanTrickster = new Archetype({
+  base: Rogue,
+  name: 'Sylvan Trickster',
+});
 
-export const Thug = Rogue.createArchetype('Thug');
+export const Thug = new Archetype({
+  base: Rogue,
+  name: 'Thug',
+});
 
-export const UndergroundChemist = Rogue.createArchetype('Underground Chemist');
+export const UndergroundChemist = new Archetype({
+  base: Rogue,
+  name: 'Underground Chemist',
+});

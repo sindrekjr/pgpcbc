@@ -1,17 +1,39 @@
 import { Class } from '../class';
+import { Archetype } from '../class.archetype';
 
 export const Bloodrager = new Class({ name: 'Bloodrager' });
 
-export const Bloodrider = Bloodrager.createArchetype('Bloodrider');
+export const Bloodrider = new Archetype({
+  base: Bloodrager,
+  name: 'Bloodrider',
+});
 
-export const Greenrager = Bloodrager.createArchetype('Greenrager');
+export const Greenrager = new Archetype({
+  base: Bloodrager,
+  name: 'Greenrager',
+});
 
-export const MixedBloodRager = Bloodrager.createArchetype('Mixed-Blood Rager');
+export const MixedBloodRager = new Archetype({
+  base: Bloodrager,
+  name: 'Mixed-Blood Rager',
+});
 
-export const Primalist = Bloodrager.createArchetype('Primalist');
+export const Primalist = new Archetype({
+  base: Bloodrager,
+  name: 'Primalist',
+});
 
-export const ReformedFiend = Bloodrager.createArchetype('Reformed Fiend');
+export const ReformedFiend = new Archetype({
+  base: Bloodrager,
+  name: 'Reformed Fiend',
+});
 
-export const Spelleater = Bloodrager.createArchetype('Spelleater');
+export const Spelleater = new Archetype({
+  base: Bloodrager,
+  name: 'Spelleater',
+});
 
-export const Steelblood = Bloodrager.createArchetype('Steelblood');
+export const Steelblood = new Archetype({
+  base: Bloodrager,
+  name: 'Steelblood',
+});

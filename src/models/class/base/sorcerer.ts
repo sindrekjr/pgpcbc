@@ -1,17 +1,39 @@
 import { Class } from '../class';
+import { Archetype } from '../class.archetype';
 
 export const Sorcerer = new Class({ name: 'Sorcerer' });
 
-export const Crossblooded = Sorcerer.createArchetype('Crossblooded');
+export const Crossblooded = new Archetype({
+  base: Sorcerer,
+  name: 'Crossblooded',
+});
 
-export const EmpyrealSorcerer = Sorcerer.createArchetype('Empyreal Sorcerer');
+export const EmpyrealSorcerer = new Archetype({
+  base: Sorcerer,
+  name: 'Empyreal Sorcerer',
+});
 
-export const NineTailedHeir = Sorcerer.createArchetype('Nine Tailed Heir');
+export const NineTailedHeir = new Archetype({
+  base: Sorcerer,
+  name: 'Nine Tailed Heir',
+});
 
-export const OverwhelmingMage = Sorcerer.createArchetype('Overwhelming Mage');
+export const OverwhelmingMage = new Archetype({
+  base: Sorcerer,
+  name: 'Overwhelming Mage',
+});
 
-export const SageSorcerer = Sorcerer.createArchetype('Sage Sorcerer');
+export const SageSorcerer = new Archetype({
+  base: Sorcerer,
+  name: 'Sage Sorcerer',
+});
 
-export const SeekerSorcerer = Sorcerer.createArchetype('Seeker');
+export const SeekerSorcerer = new Archetype({
+  base: Sorcerer,
+  name: 'Seeker',
+});
 
-export const SylvanSorcerer = Sorcerer.createArchetype('Sylvan Sorcerer');
+export const SylvanSorcerer = new Archetype({
+  base: Sorcerer,
+  name: 'Sylvan Sorcerer',
+});

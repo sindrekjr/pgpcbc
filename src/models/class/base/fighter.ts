@@ -1,15 +1,34 @@
 import { Class } from '../class';
+import { Archetype } from '../class.archetype';
 
 export const Fighter = new Class({ name: 'Fighter' });
 
-export const AldoriDefender = Fighter.createArchetype('Aldori Defender');
+export const AldoriDefender = new Archetype({
+  base: Fighter,
+  name: 'Aldori Defender',
+});
 
-export const Armiger = Fighter.createArchetype('Armiger');
+export const Armiger = new Archetype({
+  base: Fighter,
+  name: 'Armiger',
+});
 
-export const DragonhearScion = Fighter.createArchetype('Dragonhear Scion');
+export const DragonhearScion = new Archetype({
+  base: Fighter,
+  name: 'Dragonhear Scion',
+});
 
-export const MutationWarrior = Fighter.createArchetype('Mutation Warrior');
+export const MutationWarrior = new Archetype({
+  base: Fighter,
+  name: 'Mutation Warrior',
+});
 
-export const TowerShieldSpecialist = Fighter.createArchetype('Tower Shield Specialist');
+export const TowerShieldSpecialist = new Archetype({
+  base: Fighter,
+  name: 'Tower Shield Specialist',
+});
 
-export const TwoHandedFighter = Fighter.createArchetype('Two-Handed Fighter');
+export const TwoHandedFighter = new Archetype({
+  base: Fighter,
+  name: 'Two-Handed Fighter',
+});

@@ -1,15 +1,34 @@
 import { Class } from '../class';
+import { Archetype } from '../class.archetype';
 
 export const Witch = new Class({ name: 'Witch' });
 
-export const ElementalWitch = Witch.createArchetype('Elemental Witch');
+export const ElementalWitch = new Archetype({
+  base: Witch,
+  name: 'Elemental Witch',
+});
 
-export const Hagbound = Witch.createArchetype('Hagbound');
+export const Hagbound = new Archetype({
+  base: Witch,
+  name: 'Hagbound',
+});
 
-export const HexChanneler = Witch.createArchetype('Hex Channeler');
+export const HexChanneler = new Archetype({
+  base: Witch,
+  name: 'Hex Channeler',
+});
 
-export const LeyLineGuardian = Witch.createArchetype('Ley Line Guardian');
+export const LeyLineGuardian = new Archetype({
+  base: Witch,
+  name: 'Ley Line Guardian',
+});
 
-export const StigmatizedWitch = Witch.createArchetype('Archeologist');
+export const StigmatizedWitch = new Archetype({
+  base: Witch,
+  name: 'Archeologist',
+});
 
-export const WitchoftheVeil = Witch.createArchetype('Witch of the Veil');
+export const WitchoftheVeil = new Archetype({
+  base: Witch,
+  name: 'Witch of the Veil',
+});

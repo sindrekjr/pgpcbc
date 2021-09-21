@@ -1,15 +1,34 @@
 import { Class } from '../class';
+import { Archetype } from '../class.archetype';
 
 export const Skald = new Class({ name: 'Skald' });
 
-export const BattleScion = Skald.createArchetype('Battle Scion');
+export const BattleScion = new Archetype({
+  base: Skald,
+  name: 'Battle Scion',
+});
 
-export const BattleSinger = Skald.createArchetype('Battle Singer');
+export const BattleSinger = new Archetype({
+  base: Skald,
+  name: 'Battle Singer',
+});
 
-export const CourtPoet = Skald.createArchetype('Court Poet');
+export const CourtPoet = new Archetype({
+  base: Skald,
+  name: 'Court Poet',
+});
 
-export const DemonDancer = Skald.createArchetype('Demon Dancer');
+export const DemonDancer = new Archetype({
+  base: Skald,
+  name: 'Demon Dancer',
+});
 
-export const HeraldoftheHorn = Skald.createArchetype('Herald of the Horn');
+export const HeraldoftheHorn = new Archetype({
+  base: Skald,
+  name: 'Herald of the Horn',
+});
 
-export const HuntCaller = Skald.createArchetype('Hunt Caller');
+export const HuntCaller = new Archetype({
+  base: Skald,
+  name: 'Hunt Caller',
+});

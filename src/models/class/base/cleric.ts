@@ -1,15 +1,34 @@
 import { Class } from '../class';
+import { Archetype } from '../class.archetype';
 
 export const Cleric = new Class({ name: 'Cleric' });
 
-export const AngelfireApostle = Cleric.createArchetype('Angelfire Apostle');
+export const AngelfireApostle = new Archetype({
+  base: Cleric,
+  name: 'Angelfire Apostle',
+});
 
-export const Crusader = Cleric.createArchetype('Crusader');
+export const Crusader = new Archetype({
+  base: Cleric,
+  name: 'Crusader',
+});
 
-export const DevilbanePriest = Cleric.createArchetype('Devilbane Priest');
+export const DevilbanePriest = new Archetype({
+  base: Cleric,
+  name: 'Devilbane Priest',
+});
 
-export const Ecclesitheurge = Cleric.createArchetype('Ecclesitheurge');
+export const Ecclesitheurge = new Archetype({
+  base: Cleric,
+  name: 'Ecclesitheurge',
+});
 
-export const HeraldCaller = Cleric.createArchetype('Herald Caller');
+export const HeraldCaller = new Archetype({
+  base: Cleric,
+  name: 'Herald Caller',
+});
 
-export const PriestofBalance = Cleric.createArchetype('Priest of Balance');
+export const PriestofBalance = new Archetype({
+  base: Cleric,
+  name: 'Priest of Balance',
+});

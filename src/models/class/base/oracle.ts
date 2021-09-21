@@ -1,17 +1,39 @@
 import { Class } from '../class';
+import { Archetype } from '../class.archetype';
 
 export const Oracle = new Class({ name: 'Oracle' });
 
-export const DivineHerbalist = Oracle.createArchetype('Divine Herbalist');
+export const DivineHerbalist = new Archetype({
+  base: Oracle,
+  name: 'Divine Herbalist',
+});
 
-export const EnlightenedPhilosopher = Oracle.createArchetype('Enlightened Philosopher');
+export const EnlightenedPhilosopher = new Archetype({
+  base: Oracle,
+  name: 'Enlightened Philosopher',
+});
 
-export const LoneStrider = Oracle.createArchetype('Lone Strider');
+export const LoneStrider = new Archetype({
+  base: Oracle,
+  name: 'Lone Strider',
+});
 
-export const PossessedOracle = Oracle.createArchetype('Possessed Oracle');
+export const PossessedOracle = new Archetype({
+  base: Oracle,
+  name: 'Possessed Oracle',
+});
 
-export const Purifier = Oracle.createArchetype('Purifier');
+export const Purifier = new Archetype({
+  base: Oracle,
+  name: 'Purifier',
+});
 
-export const Seeker = Oracle.createArchetype('Seeker');
+export const Seeker = new Archetype({
+  base: Oracle,
+  name: 'Seeker',
+});
 
-export const WindWhisperer = Oracle.createArchetype('Wind Whisperer');
+export const WindWhisperer = new Archetype({
+  base: Oracle,
+  name: 'Wind Whisperer',
+});

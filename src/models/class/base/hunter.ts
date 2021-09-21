@@ -1,15 +1,34 @@
 import { Class } from '../class';
+import { Archetype } from '../class.archetype';
 
 export const Hunter = new Class({ name: 'Hunter' });
 
-export const ColludingScoundrel = Hunter.createArchetype('Colluding Scoundrel');
+export const ColludingScoundrel = new Archetype({
+  base: Hunter,
+  name: 'Colluding Scoundrel',
+});
 
-export const DivineHound = Hunter.createArchetype('Divine Hound');
+export const DivineHound = new Archetype({
+  base: Hunter,
+  name: 'Divine Hound',
+});
 
-export const DivineHunter = Hunter.createArchetype('Divine Hunter');
+export const DivineHunter = new Archetype({
+  base: Hunter,
+  name: 'Divine Hunter',
+});
 
-export const Forester = Hunter.createArchetype('Forester');
+export const Forester = new Archetype({
+  base: Hunter,
+  name: 'Forester',
+});
 
-export const UrbanHunter = Hunter.createArchetype('Urban Hunter');
+export const UrbanHunter = new Archetype({
+  base: Hunter,
+  name: 'Urban Hunter',
+});
 
-export const WanderingMarksman = Hunter.createArchetype('Wandering Marksman');
+export const WanderingMarksman = new Archetype({
+  base: Hunter,
+  name: 'Wandering Marksman',
+});

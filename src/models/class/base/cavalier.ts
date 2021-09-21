@@ -1,17 +1,39 @@
 import { Class } from '../class';
+import { Archetype } from '../class.archetype';
 
 export const Cavalier = new Class({ name: 'Cavalier' });
 
-export const BeastRider = Cavalier.createArchetype('Beast Rider');
+export const BeastRider = new Archetype({
+  base: Cavalier,
+  name: 'Beast Rider',
+});
 
-export const CavalierofthePaw = Cavalier.createArchetype('Cavalier of the Paw');
+export const CavalierofthePaw = new Archetype({
+  base: Cavalier,
+  name: 'Cavalier of the Paw',
+});
 
-export const DiscipleofthePike = Cavalier.createArchetype('Disciple of the Pike');
+export const DiscipleofthePike = new Archetype({
+  base: Cavalier,
+  name: 'Disciple of the Pike',
+});
 
-export const FearsomeLeader = Cavalier.createArchetype('Fearsome Leader');
+export const FearsomeLeader = new Archetype({
+  base: Cavalier,
+  name: 'Fearsome Leader',
+});
 
-export const Gendarme = Cavalier.createArchetype('Gendarme');
+export const Gendarme = new Archetype({
+  base: Cavalier,
+  name: 'Gendarme',
+});
 
-export const KnightoftheWall = Cavalier.createArchetype('Knight of the Wall');
+export const KnightoftheWall = new Archetype({
+  base: Cavalier,
+  name: 'Knight of the Wall',
+});
 
-export const StandardBearer = Cavalier.createArchetype('Standard Bearer');
+export const StandardBearer = new Archetype({
+  base: Cavalier,
+  name: 'Standard Bearer',
+});

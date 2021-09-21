@@ -1,15 +1,34 @@
 import { Class } from '../class';
+import { Archetype } from '../class.archetype';
 
 export const Ranger = new Class({ name: 'Ranger' });
 
-export const Demonslayer = Ranger.createArchetype('Demonslayer');
+export const Demonslayer = new Archetype({
+  base: Ranger,
+  name: 'Demonslayer',
+});
 
-export const EspionageExpert = Ranger.createArchetype('Espionage Expert');
+export const EspionageExpert = new Archetype({
+  base: Ranger,
+  name: 'Espionage Expert',
+});
 
-export const Flamewarden = Ranger.createArchetype('Flamewarden');
+export const Flamewarden = new Archetype({
+  base: Ranger,
+  name: 'Flamewarden',
+});
 
-export const Freebooter = Ranger.createArchetype('Freebooter');
+export const Freebooter = new Archetype({
+  base: Ranger,
+  name: 'Freebooter',
+});
 
-export const Nomad = Ranger.createArchetype('Nomad');
+export const Nomad = new Archetype({
+  base: Ranger,
+  name: 'Nomad',
+});
 
-export const Stormwalker = Ranger.createArchetype('Stormwalker');
+export const Stormwalker = new Archetype({
+  base: Ranger,
+  name: 'Stormwalker',
+});
