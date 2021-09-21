@@ -1,5 +1,4 @@
-import { Levels } from '..';
-import { ClassLevel } from '../level';
+import { ClassLevel, Levels } from '../level';
 import { Prerequisite } from './class.prerequisite';
 
 export interface ClassOptions {

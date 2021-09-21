@@ -1,19 +1,19 @@
 import { AbilityScores } from './ability';
 import { Alignment } from './alignment';
-import { CharacterLevel } from './level';
+import { CharacterLevel, Levels } from './level';
 
 export interface CharacterOptions {
   name: string;
   ability: AbilityScores;
   alignment: Alignment;
-  levels: CharacterLevel[];
+  levels: Levels<CharacterLevel>;
 }
 
 export class Character {
   name: string;
   ability: AbilityScores;
   alignment: Alignment;
-  levels: CharacterLevel[];
+  levels: Levels<CharacterLevel>;
 
   constructor({
     name,
