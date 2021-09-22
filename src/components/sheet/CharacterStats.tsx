@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { rem } from 'polished';
 
-import { Alignment, Character, getAlignmentName } from '../../models';
+import { Character, getAlignmentName, getAlignments } from '../../models';
 
 const Stats = styled.section`
   display: flex;
@@ -48,7 +48,7 @@ export const CharacterStats: FC<CharacterStatsProps> = ({ character }) => {
       <ChosenAlignment>
         <label htmlFor="alignments">Alignment</label>
         <select name="alignments">
-          {(Object.values(Alignment) as Alignment[]).map(a => (
+          {getAlignments().map(a => (
             <option key={a} value={a} selected={a === alignment}>
               {getAlignmentName(a)}
             </option>

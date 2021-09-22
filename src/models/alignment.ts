@@ -5,6 +5,10 @@ export enum Alignment {
   LE, NE, CE,
 }
 
+export const getAlignments = (): Alignment[] => (
+  Object.values(Alignment).filter(Number) as Alignment[]
+);
+
 export const getAlignmentName = (alignment: Alignment): string => {
   switch (alignment) {
     case Alignment.LG: return 'Lawful Good';
