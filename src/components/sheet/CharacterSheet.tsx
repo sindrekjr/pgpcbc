@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { useRecoilState, useSetRecoilState } from 'recoil';
+import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 import { rem } from 'polished';
 
@@ -8,7 +8,6 @@ import { Character } from '../../models';
 import { characterState } from '../../state';
 import { CharacterTable } from '../table';
 import { BaseInformation } from './BaseInformation';
-import { CharacterStats } from './CharacterStats';
 
 const Sheet = styled.article`
   display: flex;
@@ -25,24 +24,15 @@ const Sheet = styled.article`
   font-family: cursive;
 `;
 
-const Summary = styled.section`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const Name = styled.h2`
-  font-size: ${rem(36)};
-`;
-
 export interface CharacterSheetProps {
   id: number;
 }
 
 export const CharacterSheet: FC<CharacterSheetProps> = ({ id }) => {
   const [character, setCharacter] = useRecoilState(characterState(id));
-  const { name } = character;
 
   const updateCharacter = (data: Partial<Character>) => {
+    console.log('Updating character...', data);
     setCharacter({
       ...character,
       ...data,
@@ -52,10 +42,6 @@ export const CharacterSheet: FC<CharacterSheetProps> = ({ id }) => {
   return (
     <Sheet>
       <BaseInformation character={character} updateCharacter={updateCharacter} />
-      <Summary>
-        <Name>{name}</Name>
-        <CharacterStats character={character} />
-      </Summary>
       <CharacterTable character={character} />
     </Sheet>
   );
