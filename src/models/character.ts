@@ -9,21 +9,17 @@ export interface CharacterOptions {
   levels: Levels<CharacterLevel>;
 }
 
-export class Character {
+export interface Character {
+  id: number;
+  name?: string;
+  ability?: AbilityScores;
+  alignment?: Alignment;
+  levels?: Levels<CharacterLevel>;
+}
+
+export interface PremadeCharacter extends Character {
   name: string;
   ability: AbilityScores;
   alignment: Alignment;
   levels: Levels<CharacterLevel>;
-
-  constructor({
-    name,
-    ability,
-    alignment,
-    levels,
-  }: CharacterOptions) {
-    this.name = name;
-    this.ability = ability;
-    this.alignment = alignment;
-    this.levels = levels;
-  }
 }

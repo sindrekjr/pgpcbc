@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { rem } from 'polished';
 
-import { Character } from '../../models';
+import { Character, PremadeCharacter } from '../../models';
 
 const Table = styled.table`
   width: 100%;
@@ -22,7 +22,7 @@ export interface CharacterTableProps {
 }
 
 export const CharacterTable: FC<CharacterTableProps> = ({ character }) => {
-  const { levels } = character;
+  const { levels } = character as PremadeCharacter; // TODO: don't cast
 
   return (
     <Table>

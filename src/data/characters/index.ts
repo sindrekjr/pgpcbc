@@ -1,6 +1,7 @@
-import { Alignment, Character } from '../../models';
+import { Alignment, PremadeCharacter } from '../../models';
 
-const Seelah = new Character({
+const Seelah: PremadeCharacter = {
+  id: 0,
   name: 'Seelah',
   ability: {
     strength: 16,
@@ -22,6 +23,6 @@ const Seelah = new Character({
       class: 'Paladin',
     },
   },
-});
+};
 
-export const getAllCharacters = (): Character[] => [Seelah];
+export const getAllCharacters = (): PremadeCharacter[] => [Seelah];

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { rem } from 'polished';
 
-import { Character, getAlignmentName, getAlignments } from '../../models';
+import { Character, getAlignmentName, getAlignments, PremadeCharacter } from '../../models';
 
 const Stats = styled.section`
   display: flex;
@@ -41,7 +41,7 @@ export interface CharacterStatsProps {
 }
 
 export const CharacterStats: FC<CharacterStatsProps> = ({ character }) => {
-  const { alignment, ability } = character;
+  const { alignment, ability } = character as PremadeCharacter; // TODO: don't cast
 
   return (
     <Stats>

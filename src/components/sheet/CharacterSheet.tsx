@@ -1,10 +1,13 @@
 import React, { FC } from 'react';
+import { useRecoilState, useSetRecoilState } from 'recoil';
 import styled from 'styled-components';
 import { rem } from 'polished';
 
 import sheet from '../../assets/sheet.jpg';
 import { Character } from '../../models';
-import { CharacterTable } from '..';
+import { characterState } from '../../state';
+import { CharacterTable } from '../table';
+import { BaseInformation } from './BaseInformation';
 import { CharacterStats } from './CharacterStats';
 
 const Sheet = styled.article`
@@ -19,7 +22,7 @@ const Sheet = styled.article`
   padding: ${rem(16)};
   width: 100%;
 
-  font-family: Garamond;
+  font-family: cursive;
 `;
 
 const Summary = styled.section`
@@ -32,14 +35,23 @@ const Name = styled.h2`
 `;
 
 export interface CharacterSheetProps {
-  character: Character;
+  id: number;
 }
 
-export const CharacterSheet: FC<CharacterSheetProps> = ({ character }) => {
+export const CharacterSheet: FC<CharacterSheetProps> = ({ id }) => {
+  const [character, setCharacter] = useRecoilState(characterState(id));
   const { name } = character;
+
+  const updateCharacter = (data: Partial<Character>) => {
+    setCharacter({
+      ...character,
+      ...data,
+    });
+  };
 
   return (
     <Sheet>
+      <BaseInformation character={character} updateCharacter={updateCharacter} />
       <Summary>
         <Name>{name}</Name>
         <CharacterStats character={character} />
