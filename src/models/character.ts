@@ -1,25 +1,22 @@
-import { AbilityScores } from './ability';
+import { Ability, AbilityScores } from './ability';
 import { Alignment } from './alignment';
 import { CharacterLevel, Levels } from './level';
-
-export interface CharacterOptions {
-  name: string;
-  ability: AbilityScores;
-  alignment: Alignment;
-  levels: Levels<CharacterLevel>;
-}
 
 export interface Character {
   id: number;
   name?: string;
-  ability?: AbilityScores;
+  abilityScores?: AbilityScores;
+  abilityScoreIncreases?: Record<number, Ability | undefined>;
   alignment?: Alignment;
+  classes?: string[];
   levels?: Levels<CharacterLevel>;
 }
 
 export interface PremadeCharacter extends Character {
   name: string;
-  ability: AbilityScores;
+  abilityScores: AbilityScores;
+  abilityScoreIncreases: Record<number, Ability | undefined>;
   alignment: Alignment;
-  levels: Levels<CharacterLevel>;
+  classes: string[];
+  levels?: Levels<CharacterLevel>;
 }

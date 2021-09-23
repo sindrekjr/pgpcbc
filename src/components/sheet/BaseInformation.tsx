@@ -1,45 +1,25 @@
 import React, { FC, KeyboardEvent, useState } from 'react';
-import styled, { css } from 'styled-components';
-import { rem } from 'polished';
+import styled from 'styled-components';
 
-import { Character, getAlignmentName, getAlignments } from '../../models';
+import {
+  Ability,
+  Character,
+  getAlignmentName,
+  getAlignments,
+  PremadeCharacter,
+} from '../../models';
+import { Field } from '../common';
 
 const InformationSection = styled.section`
   display: flex;
 `;
 
-const Field = styled.fieldset<{ unsaved?: boolean, width?: number }>`
+const AbilityScoresWrapper = styled.div`
   display: flex;
-  flex-direction: column;
   
-  border: 0;
-  margin: 0;
-
-  width: 0%;
-
-  input, select {
-    background: none;
-    border: none;
-    border-bottom: ${rem(1)} dotted #290a0a;
-
-    font-family: cursive;
-    font-size: ${rem(16)};
-
-    width: ${({ width = 100 }) => rem(width)};
+  input {
+    text-align: center;
   }
-
-  label {
-    font-family: serif;
-    font-size: ${rem(8)};
-  }
-
-  ${({ unsaved }) => unsaved && css`
-    color: red;
-
-    input, select {
-      border-bottom: ${rem(1)} solid red; 
-    }
-  `}
 `;
 
 export interface BaseInformationProps {
@@ -51,11 +31,34 @@ export const BaseInformation: FC<BaseInformationProps> = ({
   character,
   updateCharacter,
 }) => {
-  const { name, alignment } = character;
+  const { abilityScores, alignment, name } = character as PremadeCharacter;
   const [nameVal, setNameVal] = useState(name);
 
   const handleKeyDown = ({ key }: KeyboardEvent<HTMLInputElement>, data: Partial<Character>) => {
     if (key === 'Enter') updateCharacter(data);
+  };
+
+  const handleAbilityScoreKeyDown = (
+    { key }: KeyboardEvent<HTMLInputElement>,
+    abilityToChange: Ability,
+  ) => {
+    if (key === 'ArrowUp' || key === 'ArrowRight') {
+      updateCharacter({
+        abilityScores: {
+          ...abilityScores,
+          [abilityToChange]: abilityScores[abilityToChange] + 1,
+        },
+      });
+    }
+
+    if (key === 'ArrowDown' || key === 'ArrowLeft') {
+      updateCharacter({
+        abilityScores: {
+          ...abilityScores,
+          [abilityToChange]: abilityScores[abilityToChange] - 1,
+        },
+      });
+    }
   };
 
   return (
@@ -84,6 +87,19 @@ export const BaseInformation: FC<BaseInformationProps> = ({
         </select>
         <label htmlFor="alignment">Alignment</label>
       </Field>
+      <AbilityScoresWrapper>
+        {Object.entries(abilityScores).map(([a, score]) => (
+          <Field key={a} width={20}>
+            <input
+              type="numeric"
+              name={a}
+              value={score}
+              onKeyDown={e => handleAbilityScoreKeyDown(e, a as Ability)}
+            />
+            <label htmlFor={a}>{a.substr(0, 3).toUpperCase()}</label>
+          </Field>
+        ))}
+      </AbilityScoresWrapper>
     </InformationSection>
   );
 };

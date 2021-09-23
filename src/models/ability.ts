@@ -1,15 +1,11 @@
-export enum Ability {
-  Str, Dex, Con,
-  Int, Wis, Cha,
-}
+export type Ability =
+  'strength' |
+  'dexterity' |
+  'constitution' |
+  'intelligence' |
+  'wisdom' |
+  'charisma';
 
-export interface AbilityScores {
-  strength: number;
-  dexterity: number;
-  constitution: number;
-  intelligence: number;
-  wisdom: number;
-  charisma: number;
-}
+export type AbilityScores = Record<Ability, number>;
 
 export const resolveAbilityScoreModifier = (score: number): number => Math.floor((score - 10) / 2);

@@ -42,7 +42,7 @@ export const CharacterSheet: FC<CharacterSheetProps> = ({ id }) => {
   return (
     <Sheet>
       <BaseInformation character={character} updateCharacter={updateCharacter} />
-      <CharacterTable character={character} />
+      <CharacterTable character={character} updateCharacter={updateCharacter} />
     </Sheet>
   );
 };
