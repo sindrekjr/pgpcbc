@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2886b36b.chunk.css",
+    "main.js": "/static/js/main.de8d721c.chunk.js",
+    "main.js.map": "/static/js/main.de8d721c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b8f3239d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b8f3239d.js.map",
+    "static/js/2.49ae4fb8.chunk.js": "/static/js/2.49ae4fb8.chunk.js",
+    "static/js/2.49ae4fb8.chunk.js.map": "/static/js/2.49ae4fb8.chunk.js.map",
+    "static/js/3.3c1556da.chunk.js": "/static/js/3.3c1556da.chunk.js",
+    "static/js/3.3c1556da.chunk.js.map": "/static/js/3.3c1556da.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.2886b36b.chunk.css.map": "/static/css/main.2886b36b.chunk.css.map",
+    "static/js/2.49ae4fb8.chunk.js.LICENSE.txt": "/static/js/2.49ae4fb8.chunk.js.LICENSE.txt",
+    "static/media/kingmaker.0e9cd0b0.bmp": "/static/media/kingmaker.0e9cd0b0.bmp",
+    "static/media/sheet.b4667120.jpg": "/static/media/sheet.b4667120.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b8f3239d.js",
+    "static/js/2.49ae4fb8.chunk.js",
+    "static/css/main.2886b36b.chunk.css",
+    "static/js/main.de8d721c.chunk.js"
+  ]
+}
