@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
+import { rem } from 'polished';
 
 import { Ability, Character, PremadeCharacter } from '../../models';
 import { AbilityScoreTableCell } from './AbilityScoreTableCell';
@@ -8,6 +9,15 @@ import { TableRow } from './TableRow';
 
 const Table = styled.table`
   width: 100%;
+`;
+
+const LevelCell = styled(TableCell)`
+  text-align: center;
+  width: ${rem(25)};
+`;
+
+const ClassCell = styled(TableCell)`
+  width: ${rem(220)};
 `;
 
 export interface CharacterTableProps {
@@ -50,10 +60,10 @@ export const CharacterTable: FC<CharacterTableProps> = ({ character, updateChara
       <tbody>
         {Object.values(classes).map((cl, i) => (
           <TableRow key={`${cl}-${i}`}>
-            <TableCell>{i + 1}</TableCell>
-            <TableCell>
+            <LevelCell>{i + 1}</LevelCell>
+            <ClassCell>
               {`${cl} (${classes.slice(0, i + 1).filter(c => c === cl).length})`}
-            </TableCell>
+            </ClassCell>
             {Object.entries(abilityScores).map(([a, score]) => (
               <AbilityScoreTableCell
                 key={a}

@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
+import { rem } from 'polished';
 
 import { Ability } from '../../models';
 import { TableCell } from './TableCell';
@@ -9,7 +10,7 @@ const Score = styled(TableCell)<{ bonus?: boolean, disabled?: boolean, selected?
   text-align: center;
 
   ${({ bonus }) => bonus && css`
-    background: #efa34b;
+    background: #cdc0a6;
   `}
 
   ${({ disabled }) => disabled && css`
@@ -18,7 +19,12 @@ const Score = styled(TableCell)<{ bonus?: boolean, disabled?: boolean, selected?
   `}
 
   ${({ selected }) => selected && css`
-    background: #b4be8a;
+    background: #9b9b99;
+    border: ${rem(1)} solid #a5a56a;
+  `}
+
+  ${({ bonus, selected }) => bonus && selected && css`
+    background: -webkit-linear-gradient(145deg, #cdc0a6 30%, #9b9b99 40%);
   `}
 `;
 
