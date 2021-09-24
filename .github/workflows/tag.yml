@@ -20,10 +20,12 @@ jobs:
       - run: npm ci
       - run: npm run predeploy
       - run: |
+          mkdir deploy
+          mv build deploy/build && mv index.js deploy
           git config user.name "GitHub Pages"
           git config user.email "23259585+sindrekjr@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
-          git add build -f
+          git add deploy
           git commit -am "Automatic Deploy to GitHub Pages"
-          git subtree split --prefix build -b gh-pages
+          git subtree split --prefix deploy -b gh-pages
           git push -f origin gh-pages:gh-pages
