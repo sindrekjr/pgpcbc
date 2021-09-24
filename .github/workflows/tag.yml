@@ -18,7 +18,12 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
       - run: npm ci
-      - run: git config user.name "gh" && git config user.email "gh@github.com"
-      - run: npm run deploy
-        env:
-          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - run: npm run predeploy
+      - run: |
+          git config user.name "GitHub Pages"
+          git config user.email "gh@github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          git add build -f
+          git commit -am "Automatic Deploy to GitHub Pages"
+          git subtree split --prefix build -b gh-pages
+          git push -f origin gh-pages:gh-pages
