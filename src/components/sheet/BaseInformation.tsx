@@ -6,7 +6,6 @@ import {
   Character,
   getAlignmentName,
   getAlignments,
-  PremadeCharacter,
 } from '../../models';
 import { Field } from '../common';
 
@@ -31,7 +30,7 @@ export const BaseInformation: FC<BaseInformationProps> = ({
   character,
   updateCharacter,
 }) => {
-  const { abilityScores, alignment, name } = character as PremadeCharacter;
+  const { abilityScores, alignment, name } = character;
   const [nameVal, setNameVal] = useState(name);
 
   const handleKeyDown = ({ key }: KeyboardEvent<HTMLInputElement>, data: Partial<Character>) => {

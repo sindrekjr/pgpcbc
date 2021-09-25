@@ -1,6 +1,6 @@
-import { Alignment, PremadeCharacter } from '../../models';
+import { Alignment, Character } from '../../models';
 
-const Seelah: PremadeCharacter = {
+const Seelah: Character = {
   id: 0,
   name: 'Seelah',
   abilityScores: {
@@ -11,28 +11,10 @@ const Seelah: PremadeCharacter = {
     wisdom: 13,
     charisma: 15,
   },
-  abilityScoreIncreases: {
-    4: 'charisma',
-    8: 'strength',
-    12: 'strength',
-    16: undefined,
-    20: undefined,
-  },
   alignment: Alignment.LG,
-  classes: [
-    'Paladin',
-    'Ranger',
-    'Ranger',
-    'Paladin',
-    'Paladin',
-    'Cavalier',
-    'Cavalier',
-    'Paladin',
-    'Paladin',
-    'Paladin',
-    'Paladin',
-    'Warpriest',
+  builds: [
+    0,
   ],
 };
 
-export const getAllCharacters = (): PremadeCharacter[] => [Seelah];
+export const getAllCharacters = (): Character[] => [Seelah];

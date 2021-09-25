@@ -3,9 +3,14 @@ import styled, { css } from 'styled-components';
 import { rem } from 'polished';
 
 import { Ability } from '../../models';
-import { TableCell } from './TableCell';
+import { TableCell, TableCellProps } from './TableCell';
 
-const Score = styled(TableCell)<{ bonus?: boolean, disabled?: boolean, selected?: boolean }>`
+interface ScoreProps extends TableCellProps {
+  bonus?: boolean;
+  selected?: boolean;
+}
+
+const Score = styled(TableCell)<ScoreProps>`
   cursor: pointer;
   text-align: center;
 
@@ -13,27 +18,19 @@ const Score = styled(TableCell)<{ bonus?: boolean, disabled?: boolean, selected?
     background: #cdc0a6;
   `}
 
-  ${({ disabled }) => disabled && css`
-    color: grey;
-    cursor: initial;
-  `}
-
   ${({ selected }) => selected && css`
-    background: #9b9b99;
+    background: #279f27;
     border: ${rem(1)} solid #a5a56a;
   `}
 
   ${({ bonus, selected }) => bonus && selected && css`
-    background: -webkit-linear-gradient(145deg, #cdc0a6 30%, #9b9b99 40%);
+    background: -webkit-linear-gradient(145deg, #cdc0a6 30%, #279f27 40%);
   `}
 `;
 
-export interface AbilityScoreTableCellProps {
+export interface AbilityScoreTableCellProps extends ScoreProps {
   ability: Ability;
   score: number;
-  bonus?: boolean;
-  disabled?: boolean;
-  selected?: boolean;
   onSelect?: (ability: Ability) => void;
 }
 

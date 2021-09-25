@@ -1,8 +1,10 @@
 import React, { FC } from 'react';
+import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 import { rem } from 'polished';
 
-import { Ability, Character, PremadeCharacter } from '../../models';
+import { buildState } from '../../state/build.state';
+import { Ability, Character } from '../../models';
 import { AbilityScoreTableCell } from './AbilityScoreTableCell';
 import { TableCell } from './TableCell';
 import { TableRow } from './TableRow';
@@ -20,17 +22,24 @@ const ClassCell = styled(TableCell)`
   width: ${rem(220)};
 `;
 
+const FeatCell = styled(TableCell)`
+  select {
+    background: transparent;
+    border: 0;
+  }
+`;
+
 export interface CharacterTableProps {
   character: Character;
-  updateCharacter: (data: Partial<Character>) => void;
 }
 
-export const CharacterTable: FC<CharacterTableProps> = ({ character, updateCharacter }) => {
-  const {
-    abilityScores,
-    abilityScoreIncreases,
-    classes,
-  } = character as PremadeCharacter; // TODO: don't cast
+export const CharacterTable: FC<CharacterTableProps> = ({ character }) => {
+  const { abilityScores, builds } = character; // TODO: don't cast
+
+  const [build, setBuild] = useRecoilState(buildState(builds ? builds[0] : -1));
+  if (!build) return null;
+
+  const { abilityScoreIncreases, classes, feats } = build;
 
   const countAbilityScoreIncreases = (ability: string, atLevel: number): number => (
       [4, 8, 12, 16, 20].filter(n => n <= atLevel) as (4 | 8 | 12 | 16 | 20)[]
@@ -41,7 +50,8 @@ export const CharacterTable: FC<CharacterTableProps> = ({ character, updateChara
   );
 
   const changeAbilityScoreIncrease = (ability: Ability, atLevel: number): void => {
-    updateCharacter({
+    setBuild({
+      ...build,
       abilityScoreIncreases: {
         ...abilityScoreIncreases,
         [atLevel]: ability,
@@ -55,25 +65,41 @@ export const CharacterTable: FC<CharacterTableProps> = ({ character, updateChara
         <th></th>
         <th>Class</th>
         <th colSpan={Object.keys(abilityScores).length} />
-        <th>Details</th>
+        <th colSpan={3}>Feats</th>
+        <th>Traits</th>
       </thead>
       <tbody>
-        {Object.values(classes).map((cl, i) => (
-          <TableRow key={`${cl}-${i}`}>
-            <LevelCell>{i + 1}</LevelCell>
+        {(Object.entries(classes) as unknown as [number, string][]).map(([level, cl]) => (
+          <TableRow key={`${cl}-${level}`}>
+            <LevelCell>{level}</LevelCell>
             <ClassCell>
-              {`${cl} (${classes.slice(0, i + 1).filter(c => c === cl).length})`}
+              {`${cl} (${Object.values(classes).slice(0, level).filter(c => c === cl).length})`}
             </ClassCell>
             {Object.entries(abilityScores).map(([a, score]) => (
               <AbilityScoreTableCell
                 key={a}
                 ability={a as Ability}
-                score={score + countAbilityScoreIncreases(a, i + 1)}
-                disabled={(i + 1) % 4 !== 0}
-                selected={(i + 1) % 4 === 0 && abilityScoreIncreaseSelected(a, i + 1)}
-                onSelect={ability => changeAbilityScoreIncrease(ability, i + 1)}
+                score={score + countAbilityScoreIncreases(a, level)}
+                disabled={level % 4 !== 0}
+                selected={level % 4 === 0 && abilityScoreIncreaseSelected(a, level)}
+                onSelect={ability => changeAbilityScoreIncrease(ability, level)}
               />
             ))}
+            <FeatCell disabled={level % 2 === 0}>
+              {level % 2 !== 0 && (
+                <select name="feat">
+                  <option>
+                    {feats[level] && feats[level].general}
+                  </option>
+                </select>
+              )}
+            </FeatCell>
+            <FeatCell>
+              {feats[level] && feats[level].bonus1}
+            </FeatCell>
+            <FeatCell>
+              {feats[level] && feats[level].bonus2}
+            </FeatCell>
             <TableCell></TableCell>
           </TableRow>
         ))}
