@@ -1,0 +1,14 @@
+{
+  "id": 0,
+  "name": "Seelah",
+  "alignment": 1, 
+  "abilityScores": {
+    "strength": 16, 
+    "dexterity": 13, 
+    "constitution": 14, 
+    "intelligence": 10, 
+    "wisdom": 13, 
+    "charisma": 15
+  },
+  "builds": [0]
+}

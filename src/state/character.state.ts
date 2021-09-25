@@ -1,6 +1,6 @@
 import { atom, atomFamily, selector, selectorFamily } from 'recoil';
 
-import { getAllCharacters } from '../data';
+import { getAllCharacters } from '../services';
 import { Character } from '../models';
 
 export const characterListState = atom<Character[]>({

@@ -1,6 +1,6 @@
 import { atom, atomFamily, selector, selectorFamily } from 'recoil';
 
-import { getAllBuilds } from '../data';
+import { getAllBuilds } from '../services';
 import { CharacterBuild } from '../models';
 
 export const buildListState = atom<CharacterBuild[]>({

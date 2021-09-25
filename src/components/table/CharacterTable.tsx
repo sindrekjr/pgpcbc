@@ -39,21 +39,21 @@ export const CharacterTable: FC<CharacterTableProps> = ({ character }) => {
   const [build, setBuild] = useRecoilState(buildState(builds ? builds[0] : -1));
   if (!build) return null;
 
-  const { abilityScoreIncreases, classes, feats } = build;
+  const { abilityScoreIncreases: asi, classes, feats } = build;
 
   const countAbilityScoreIncreases = (ability: string, atLevel: number): number => (
-      [4, 8, 12, 16, 20].filter(n => n <= atLevel) as (4 | 8 | 12 | 16 | 20)[]
-  ).filter(key => abilityScoreIncreases[key] === ability).length;
+    [4,8,12,16,20].filter(n => n <= atLevel).filter(key => asi[key] === ability).length
+  );
 
   const abilityScoreIncreaseSelected = (ability: string, atLevel: number): boolean => (
-    abilityScoreIncreases[atLevel] === ability
+    asi[atLevel] === ability
   );
 
   const changeAbilityScoreIncrease = (ability: Ability, atLevel: number): void => {
     setBuild({
       ...build,
       abilityScoreIncreases: {
-        ...abilityScoreIncreases,
+        ...asi,
         [atLevel]: ability,
       },
     });
