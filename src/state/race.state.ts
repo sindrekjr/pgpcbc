@@ -1,6 +1,6 @@
 import { atom, atomFamily, selector, selectorFamily } from 'recoil';
 
-import { Race } from '../models';
+import { Heritage, Race } from '../models';
 import { getAllRaces } from '../services';
 
 export const raceListState = atom<Race[]>({
@@ -11,10 +11,25 @@ export const raceListState = atom<Race[]>({
   }),
 });
 
-export const raceState = atomFamily<Race | undefined, number>({
+export const baseRaceListSelector = selector<Race[]>({
+  key: 'baseRaceList/selector',
+  get: ({ get }) => (get(raceListState) as Heritage[]).filter(r => !r.base),
+});
+
+export const raceHeritageListSelector = selector<Heritage[]>({
+  key: 'raceHeritageList/selector',
+  get: ({ get }) => (get(raceListState) as Heritage[]).filter(r => r.base),
+});
+
+export const raceState = atomFamily<Race, number>({
   key: 'race/state',
-  default: selectorFamily<Race | undefined, number>({
+  default: selectorFamily<Race, number>({
     key: 'race/selector',
-    get: identifier => ({ get }) => get(raceListState).find(({ id }) => id === identifier),
+    get: identifier => ({ get }) => {
+      const race = get(raceListState).find(({ id }) => id === identifier);
+      if (race) return race;
+
+      throw new Error(`No race found with id ${identifier}.`);
+    },
   }),
 });

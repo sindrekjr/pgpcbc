@@ -2,7 +2,7 @@
   {
     "id": 600,
     "name": "Half-Orc",
-    "abilityScores": 2,
+    "abilityScoreChoiceIncrease": 2,
     "traits": []
   },
   {

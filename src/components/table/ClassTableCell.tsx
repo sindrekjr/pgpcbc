@@ -16,9 +16,13 @@ export const ClassTableCell: FC<ClassTableCellProps> = ({ classId, classCount, o
 
   return (
     <TableCell>
-      <TableSelect name="class" onChange={e => onChange && onChange(parseInt(e.target.value))}>
+      <TableSelect
+        name="class"
+        value={classId}
+        onChange={e => onChange && onChange(parseInt(e.target.value))}
+      >
         {classes.map(({ id, name }) => (
-          <option key={id} value={id} selected={id === classId}>
+          <option key={id} value={id}>
             {`${name}${classCount && id === classId ? ` (${classCount})` : ''}`}
           </option>
         ))}

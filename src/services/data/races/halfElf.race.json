@@ -2,7 +2,7 @@
   {
     "id": 500,
     "name": "Half-Elf",
-    "abilityScores": 2,
+    "abilityScoreChoiceIncrease": 2,
     "traits": []
   },
   {

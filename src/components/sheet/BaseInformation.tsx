@@ -1,4 +1,5 @@
 import React, { FC, KeyboardEvent, useState } from 'react';
+import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 
 import {
@@ -6,6 +7,7 @@ import {
   getAlignmentName,
   getAlignments,
 } from '../../models';
+import { baseRaceListSelector } from '../../state';
 import { Field } from '../common';
 import { BaseAbilityScores } from './BaseAbilityScores';
 
@@ -22,7 +24,9 @@ export const BaseInformation: FC<BaseInformationProps> = ({
   character,
   updateCharacter,
 }) => {
-  const { abilityScores, alignment, name } = character;
+  const { abilityScores, alignment, name, race } = character;
+  const races = useRecoilValue(baseRaceListSelector);
+
   const [nameVal, setNameVal] = useState(name);
 
   const handleKeyDown = ({ key }: KeyboardEvent<HTMLInputElement>, data: Partial<Character>) => {
@@ -42,20 +46,38 @@ export const BaseInformation: FC<BaseInformationProps> = ({
         />
         <label htmlFor="name">Name</label>
       </Field>
+      <Field>
+        <select
+          name="race"
+          value={race}
+          onChange={e => updateCharacter({ race: parseInt(e.target.value ) })}
+        >
+          {races.map(({ id, name }) => (
+            <option key={id} value={id}>
+              {name}
+            </option>
+          ))}
+        </select>
+      </Field>
       <Field width={120}>
         <select
           name="alignment"
+          value={alignment}
           onChange={e => updateCharacter({ alignment: parseInt(e.target.value) })}
         >
           {getAlignments().map(a => (
-            <option key={a} value={a} selected={a === alignment}>
+            <option key={a} value={a}>
               {getAlignmentName(a)}
             </option>
           ))}
         </select>
         <label htmlFor="alignment">Alignment</label>
       </Field>
-      <BaseAbilityScores abilityScores={abilityScores} updateCharacter={updateCharacter} />
+      <BaseAbilityScores
+        raceId={race}
+        abilityScores={abilityScores}
+        updateCharacter={updateCharacter}
+      />
     </InformationSection>
   );
 };

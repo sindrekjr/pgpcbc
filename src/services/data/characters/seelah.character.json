@@ -2,13 +2,13 @@
   "id": 0,
   "name": "Seelah",
   "race": 0,
-  "alignment": 1, 
+  "alignment": 1,
   "abilityScores": {
-    "str": 16, 
-    "dex": 13, 
-    "con": 14, 
-    "int": 10, 
-    "wis": 13, 
+    "str": 16,
+    "dex": 13,
+    "con": 14,
+    "int": 10,
+    "wis": 13,
     "cha": 15
   },
   "builds": [0]
