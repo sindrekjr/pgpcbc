@@ -58,6 +58,7 @@ export const BaseInformation: FC<BaseInformationProps> = ({
             </option>
           ))}
         </select>
+        <label htmlFor="race">Race</label>
       </Field>
       <Field width={120}>
         <select

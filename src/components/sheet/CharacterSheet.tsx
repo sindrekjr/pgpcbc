@@ -28,7 +28,7 @@ export interface CharacterSheetProps {
 
 export const CharacterSheet: FC<CharacterSheetProps> = ({ id }) => {
   const [character, setCharacter] = useRecoilState(characterState(id));
-  const { builds: [buildId] } = character;
+  const { builds } = character;
 
   const updateCharacter = (data: Partial<Character>) => {
     console.log('Updating character...', data);
@@ -38,12 +38,12 @@ export const CharacterSheet: FC<CharacterSheetProps> = ({ id }) => {
     });
   };
 
-  if (buildId === undefined) return null;
+  if (!builds || !builds.length) return null;
 
   return (
     <Sheet>
       <BaseInformation character={character} updateCharacter={updateCharacter} />
-      <BuildTable buildId={buildId} character={character} />
+      <BuildTable buildId={builds[0]} character={character} />
     </Sheet>
   );
 };

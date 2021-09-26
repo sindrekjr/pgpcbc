@@ -11,6 +11,11 @@ export const characterListState = atom<Character[]>({
   }),
 });
 
+export const selectedCharacterState = atom<number>({
+  key: 'selectedCharacter/state',
+  default: 0,
+});
+
 export const characterState = atomFamily<Character, number | string>({
   key: 'character/state',
   default: selectorFamily<Character, number | string>({

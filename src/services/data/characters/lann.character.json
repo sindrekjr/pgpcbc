@@ -1,0 +1,14 @@
+{
+  "id": 1,
+  "name": "Lann",
+  "race": 0,
+  "alignment": 4,
+  "abilityScores": {
+    "str": 17,
+    "dex": 17,
+    "con": 14,
+    "int": 11,
+    "wis": 17,
+    "cha": 9
+  }
+}

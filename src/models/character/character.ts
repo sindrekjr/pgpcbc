@@ -7,5 +7,5 @@ export interface Character {
   race: number;
   abilityScores: AbilityScores;
   alignment: Alignment;
-  builds: number[];
+  builds?: number[];
 }
