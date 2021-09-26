@@ -1,6 +1,6 @@
 {
-  "short_name": "PF Character Builder",
-  "name": "Pathfinder Character Builder",
+  "short_name": "PGPCBC",
+  "name": "Pretty Good Pathfinder Character Build Calculator",
   "icons": [
     {
       "src": "favicon.ico",
