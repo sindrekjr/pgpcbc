@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import { rem } from 'polished';
 
 import { buildState } from '../../state/build.state';
-import { Ability, Character } from '../../models';
-import { AbilityScoreTableCell } from './AbilityScoreTableCell';
+import { Build, Character } from '../../models';
+import { AbilityScoreTableCells } from './AbilityScoreTableCells';
 import { TableCell } from './TableCell';
 import { TableRow } from './TableRow';
 import { ClassTableCell } from './ClassTableCell';
@@ -30,38 +30,20 @@ export interface BuildTableProps {
 }
 
 export const BuildTable: FC<BuildTableProps> = ({ buildId, character }) => {
-  const { abilityScores } = character;
+  const { abilityScores, race } = character;
 
   const [build, setBuild] = useRecoilState(buildState(buildId));
   if (!build) return null;
 
-  const { name, description, abilityScoreIncreases: asi, classes, feats } = build;
+  const { abilityScoreIncreases, classes, feats } = build;
 
-  const countAbilityScoreIncreases = (ability: string, atLevel: number): number => (
-    [4,8,12,16,20].filter(n => n <= atLevel).filter(key => asi[key] === ability).length
-  );
-
-  const abilityScoreIncreaseSelected = (ability: string, atLevel: number): boolean => (
-    asi[atLevel] === ability
-  );
-
-  const changeAbilityScoreIncrease = (ability: Ability, atLevel: number): void => {
+  const updateBuild = (data: Partial<Build>) => {
+    console.log('Updating build...', data);
     setBuild({
       ...build,
-      abilityScoreIncreases: {
-        ...asi,
-        [atLevel]: ability,
-      },
+      ...data,
     });
   };
-
-  const changeClass = (level: number, newClassId: number) => setBuild({
-    ...build,
-    classes: {
-      ...classes,
-      [level]: newClassId,
-    },
-  });
 
   return (
     <>
@@ -77,28 +59,27 @@ export const BuildTable: FC<BuildTableProps> = ({ buildId, character }) => {
           </tr>
         </thead>
         <tbody>
-          {(Object.entries(classes) as unknown as [number, number][]).map(([level, classId]) => (
+          {(Object.entries(classes) as unknown as [string, number][]).map(([level, classId]) => (
             <TableRow key={`${classId}-${level}`}>
               <LevelCell>{level}</LevelCell>
               <ClassTableCell
                 classId={classId}
                 classCount={(
-                  Object.values(classes).slice(0, level).filter(c => c === classId).length
+                  Object.values(classes).slice(0, parseInt(level)).filter(c => c === classId).length
                 )}
-                onChange={newClassId => changeClass(level, newClassId)}
+                onChange={newClassId => updateBuild({
+                  classes: { ...classes, [level]: newClassId },
+                })}
               />
-              {Object.entries(abilityScores).map(([a, score]) => (
-                <AbilityScoreTableCell
-                  key={a}
-                  ability={a as Ability}
-                  score={score + countAbilityScoreIncreases(a, level)}
-                  disabled={level % 4 !== 0}
-                  selected={level % 4 === 0 && abilityScoreIncreaseSelected(a, level)}
-                  onSelect={ability => changeAbilityScoreIncrease(ability, level)}
-                />
-              ))}
-              <TableCell disabled={level % 2 === 0}>
-                {level % 2 !== 0 && (
+              <AbilityScoreTableCells
+                abilityScores={abilityScores}
+                abilityScoreIncreases={abilityScoreIncreases}
+                level={parseInt(level)}
+                raceId={race}
+                updateBuild={updateBuild}
+              />
+              <TableCell disabled={parseInt(level) % 2 === 0}>
+                {parseInt(level) % 2 !== 0 && (
                   <TableSelect name="feat">
                     <option>
                       {feats[level] && feats[level].general}
@@ -117,8 +98,6 @@ export const BuildTable: FC<BuildTableProps> = ({ buildId, character }) => {
           ))}
         </tbody>
       </Table>
-      <h4>{name}</h4>
-      <p>{description}</p>
     </>
   );
 };

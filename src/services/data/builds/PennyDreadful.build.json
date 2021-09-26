@@ -2,6 +2,7 @@
   "id": 0,
   "name": "Penny Dreadful",
   "abilityScoreIncreases": {
+    "1": "str",
     "4": "str",
     "8": "str",
     "12": "str",

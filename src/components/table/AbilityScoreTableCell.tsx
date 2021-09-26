@@ -2,11 +2,15 @@ import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
 import { rem } from 'polished';
 
-import { Ability } from '../../models';
 import { TableCell, TableCellProps } from './TableCell';
+
+const bonusColour = '#969d76';
+const penaltyColour = '#ba847c';
+const selectedColour = '#926a82';
 
 interface ScoreProps extends TableCellProps {
   bonus?: boolean;
+  penalty?: boolean;
   selected?: boolean;
 }
 
@@ -15,39 +19,47 @@ const Score = styled(TableCell)<ScoreProps>`
   cursor: ${({ disabled }) => disabled ? 'default' : 'pointer'};
 
   ${({ bonus }) => bonus && css`
-    background: #cdc0a6;
-  `}
-
-  ${({ selected }) => selected && css`
-    background: #926a82;
-    border: ${rem(1)} solid #dad4ce;
+    background: ${bonusColour};
     color: white;
   `}
 
-  ${({ bonus, selected }) => bonus && selected && css`
-    background: -webkit-linear-gradient(145deg, #cdc0a6 30%, #926a82 40%);
+  ${({ penalty }) => penalty && css`
+    background: ${penaltyColour};
+    color: white;
+  `}
+
+  ${({ selected }) => selected && css`
+    background: ${selectedColour};
+    border: ${rem(1)} inset #aca195;
+    color: white;
+  `}
+
+  ${({ bonus, penalty, selected }) => (bonus || penalty) && selected && css`
+    background: -webkit-linear-gradient(
+      145deg, ${bonus ? bonusColour : penaltyColour} 30%, ${selectedColour} 40%
+    );
   `}
 `;
 
 export interface AbilityScoreTableCellProps extends ScoreProps {
-  ability: Ability;
   score: number;
-  onSelect?: (ability: Ability) => void;
+  onSelect?: () => void;
 }
 
 export const AbilityScoreTableCell: FC<AbilityScoreTableCellProps> = ({
-  ability,
   score,
   bonus,
+  penalty,
   disabled,
   selected,
   onSelect,
 }) => (
   <Score
     bonus={bonus}
+    penalty={penalty}
     disabled={disabled}
     selected={selected}
-    onClick={() => onSelect && onSelect(ability)}
+    onClick={() => onSelect && onSelect()}
     width={20}
   >
     {score}
