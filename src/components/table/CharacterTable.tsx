@@ -30,7 +30,7 @@ export const CharacterTable: FC<CharacterTableProps> = ({ character }) => {
   const [build, setBuild] = useRecoilState(buildState(builds ? builds[0] : -1));
   if (!build) return null;
 
-  const { abilityScoreIncreases: asi, classes, feats } = build;
+  const { name, description, abilityScoreIncreases: asi, classes, feats } = build;
 
   const countAbilityScoreIncreases = (ability: string, atLevel: number): number => (
     [4,8,12,16,20].filter(n => n <= atLevel).filter(key => asi[key] === ability).length
@@ -50,52 +50,69 @@ export const CharacterTable: FC<CharacterTableProps> = ({ character }) => {
     });
   };
 
+  const changeClass = (level: number, newClassId: number) => setBuild({
+    ...build,
+    classes: {
+      ...classes,
+      [level]: newClassId,
+    },
+  });
+
   return (
-    <Table>
-      <thead>
-        <th></th>
-        <th>Class</th>
-        <th colSpan={Object.keys(abilityScores).length} />
-        <th colSpan={3}>Feats</th>
-        <th>Traits</th>
-      </thead>
-      <tbody>
-        {(Object.entries(classes) as unknown as [number, number][]).map(([level, cl]) => (
-          <TableRow key={`${cl}-${level}`}>
-            <LevelCell>{level}</LevelCell>
-            <ClassTableCell classId={cl} />
-            {/* <ClassCell>
-              {`${cl} (${Object.values(classes).slice(0, level).filter(c => c === cl).length})`}
-            </ClassCell> */}
-            {Object.entries(abilityScores).map(([a, score]) => (
-              <AbilityScoreTableCell
-                key={a}
-                ability={a as Ability}
-                score={score + countAbilityScoreIncreases(a, level)}
-                disabled={level % 4 !== 0}
-                selected={level % 4 === 0 && abilityScoreIncreaseSelected(a, level)}
-                onSelect={ability => changeAbilityScoreIncrease(ability, level)}
+    <>
+      <Table>
+        <thead>
+          <tr>
+            <th />
+            <th>Class</th>
+            <th colSpan={Object.keys(abilityScores).length} />
+            <th colSpan={3}>Feats</th>
+            <th>Traits</th>
+          </tr>
+        </thead>
+        <tbody>
+          {(Object.entries(classes) as unknown as [number, number][]).map(([level, classId]) => (
+            <TableRow key={`${classId}-${level}`}>
+              <LevelCell>{level}</LevelCell>
+              <ClassTableCell
+                classId={classId}
+                classCount={(
+                  Object.values(classes).slice(0, level).filter(c => c === classId).length
+                )}
+                onChange={newClassId => changeClass(level, newClassId)}
               />
-            ))}
-            <TableCell disabled={level % 2 === 0}>
-              {level % 2 !== 0 && (
-                <TableSelect name="feat">
-                  <option>
-                    {feats[level] && feats[level].general}
-                  </option>
-                </TableSelect>
-              )}
-            </TableCell>
-            <TableCell>
-              {feats[level] && feats[level].bonus1}
-            </TableCell>
-            <TableCell>
-              {feats[level] && feats[level].bonus2}
-            </TableCell>
-            <TableCell></TableCell>
-          </TableRow>
-        ))}
-      </tbody>
-    </Table>
+              {Object.entries(abilityScores).map(([a, score]) => (
+                <AbilityScoreTableCell
+                  key={a}
+                  ability={a as Ability}
+                  score={score + countAbilityScoreIncreases(a, level)}
+                  disabled={level % 4 !== 0}
+                  selected={level % 4 === 0 && abilityScoreIncreaseSelected(a, level)}
+                  onSelect={ability => changeAbilityScoreIncrease(ability, level)}
+                />
+              ))}
+              <TableCell disabled={level % 2 === 0}>
+                {level % 2 !== 0 && (
+                  <TableSelect name="feat">
+                    <option>
+                      {feats[level] && feats[level].general}
+                    </option>
+                  </TableSelect>
+                )}
+              </TableCell>
+              <TableCell>
+                {feats[level] && feats[level].bonus1}
+              </TableCell>
+              <TableCell>
+                {feats[level] && feats[level].bonus2}
+              </TableCell>
+              <TableCell></TableCell>
+            </TableRow>
+          ))}
+        </tbody>
+      </Table>
+      <h4>{name}</h4>
+      <p>{description}</p>
+    </>
   );
 };

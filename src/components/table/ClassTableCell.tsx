@@ -7,18 +7,19 @@ import { TableSelect } from './TableSelect';
 
 export interface ClassTableCellProps {
   classId: number;
+  classCount?: number;
   onChange?: (newClassId: number) => void;
 }
 
-export const ClassTableCell: FC<ClassTableCellProps> = ({ classId, onChange }) => {
+export const ClassTableCell: FC<ClassTableCellProps> = ({ classId, classCount, onChange }) => {
   const classes = useRecoilValue(classListState);
 
   return (
     <TableCell>
-      <TableSelect name="class" onChange={e => console.log(e)}>
+      <TableSelect name="class" onChange={e => onChange && onChange(parseInt(e.target.value))}>
         {classes.map(({ id, name }) => (
           <option key={id} value={id} selected={id === classId}>
-            {name}
+            {`${name}${classCount && ` (${classCount}`})`}
           </option>
         ))}
       </TableSelect>

@@ -3,6 +3,8 @@ import { Ability } from '../ability';
 export interface CharacterBuild {
   id: number;
   name: string;
+  description?: string;
+  source?: string;
   abilityScoreIncreases: Record<number | string, Ability | string>;
   classes: Record<number | string, number>;
   feats: Record<number | string, {
@@ -11,5 +13,4 @@ export interface CharacterBuild {
     general?: string;
   }>;
   skills: Record<number | string, Record<string, number>>;
-  source?: string;
 }
