@@ -1,0 +1,71 @@
+[
+  {
+    "id": 700,
+    "name": "Aasimar",
+    "abilityScores": {
+      "wis": 2,
+      "cha": 2
+    },
+    "traits": []
+  },
+  {
+    "id": 701,
+    "base": 700,
+    "name": "Angelkin (Angel-Blooded)",
+    "abilityScores": {
+      "str": 2,
+      "cha": 2
+    },
+    "traits": []
+  },
+  {
+    "id": 702,
+    "base": 700,
+    "name": "Emberkin (Peri-Blooded)",
+    "abilityScores": {
+      "int": 2,
+      "cha": 2
+    },
+    "traits": []
+  },
+  {
+    "id": 703,
+    "base": 700,
+    "name": "Idyllkin (Agathion-Blooded)",
+    "abilityScores": {
+      "con": 2,
+      "cha": 2
+    },
+    "traits": []
+  },
+  {
+    "id": 704,
+    "base": 700,
+    "name": "Lawbringer (Archon-Blooded)",
+    "abilityScores": {
+      "con": 2,
+      "wis": 2
+    },
+    "traits": []
+  },
+  {
+    "id": 705,
+    "base": 700,
+    "name": "Musetouched (Azata-Blooded)",
+    "abilityScores": {
+      "dex": 2,
+      "cha": 2
+    },
+    "traits": []
+  },
+  {
+    "id": 706,
+    "base": 700,
+    "name": "Plumekith (Garuda-Blooded)",
+    "abilityScores": {
+      "dex": 2,
+      "wis": 2
+    },
+    "traits": []
+  }
+]

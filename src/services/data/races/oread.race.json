@@ -1,0 +1,32 @@
+[
+  {
+    "id": 900,
+    "name": "Oread",
+    "abilityScores": {
+      "str": 2,
+      "wis": 2,
+      "cha": -2
+    },
+    "traits": []
+  },
+  {
+    "id": 901,
+    "base": 900,
+    "name": "Gemsoul (Crystal Oread)",
+    "abilityScores": {
+      "str": 2,
+      "cha": 2,
+      "wis": -2
+    }
+  },
+  {
+    "id": 902,
+    "base": 900,
+    "name": "Ironsoul (Metal Oread)",
+    "abilityScores": {
+      "con": 2,
+      "wis": 2,
+      "dex": -2
+    }
+  }
+]

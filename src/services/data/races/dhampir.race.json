@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1000,
+    "name": "Dhampir",
+    "abilityScores": {
+      "dex": 2,
+      "cha": 2,
+      "con": -2
+    },
+    "traits": []
+  },
+  {
+    "id": 1001,
+    "base": 1000,
+    "name": "Jiang-Shi-Born (Ru-Shi)",
+    "abilityScores": {
+      "str": 2,
+      "int": 2,
+      "dex": -2
+    }
+  },
+  {
+    "id": 1002,
+    "base": 1000,
+    "name": "Moro-Born (Svetocher)",
+    "abilityScores": {
+      "str": 2,
+      "cha": 2,
+      "con": -2
+    }
+  },
+  {
+    "id": 1003,
+    "base": 1000,
+    "name": "Nosferatu-Born (Ancient-Born)",
+    "abilityScores": {
+      "str": 2,
+      "wis": 2,
+      "con": -2
+    }
+  },
+  {
+    "id": 1004,
+    "base": 1000,
+    "name": "Vampire King-Born (Sacred Ancestry)",
+    "abilityScores": {
+      "str": 2,
+      "int": 2,
+      "dex": -2
+    }
+  },
+  {
+    "id": 1005,
+    "base": 1000,
+    "name": "Vetala-Born (Ajibachana)",
+    "abilityScores": {
+      "dex": 2,
+      "int": 2,
+      "wis": -2
+    }
+  }
+]

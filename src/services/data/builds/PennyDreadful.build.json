@@ -2,11 +2,11 @@
   "id": 0,
   "name": "Penny Dreadful",
   "abilityScoreIncreases": {
-    "4": "strength",
-    "8": "strength",
-    "12": "strength",
-    "16": "strength",
-    "20": "charisma"
+    "4": "str",
+    "8": "str",
+    "12": "str",
+    "16": "str",
+    "20": "cha"
   },
   "classes": {
     "1": 1600,

@@ -1,0 +1,22 @@
+[
+  {
+    "id": 400,
+    "name": "Halfling",
+    "abilityScores": {
+      "dex": 2,
+      "cha": 2,
+      "str": -2
+    },
+    "traits": []
+  },
+  {
+    "id": 401,
+    "base": 400,
+    "name": "Craven"
+  },
+  {
+    "id": 402,
+    "base": 400,
+    "name": "Hasty"
+  }
+]

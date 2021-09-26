@@ -1,0 +1,122 @@
+[
+  {
+    "id": 800,
+    "name": "Tiefling",
+    "abilityScores": {
+      "dex": 2,
+      "int": 2,
+      "cha": -2
+    },
+    "traits": []
+  },
+  {
+    "id": 801,
+    "base": 800,
+    "name": "Beastbrood (Rakshasa-Spawn)",
+    "abilityScores": {
+      "dex": 2,
+      "cha": 2,
+      "wis": -2
+    },
+    "traits": []
+  },
+  {
+    "id": 802,
+    "base": 800,
+    "name": "Faultspawn (Asura-Spawn)",
+    "abilityScores": {
+      "dex": 2,
+      "wis": 2,
+      "int": -2
+    },
+    "traits": []
+  },
+  {
+    "id": 803,
+    "base": 800,
+    "name": "Foulspawn (Demodand-Spawn)",
+    "abilityScores": {
+      "con": 2,
+      "wis": 2,
+      "int": -2
+    },
+    "traits": []
+  },
+  {
+    "id": 804,
+    "base": 800,
+    "name": "Grimspawn (Daemon-Spawn)",
+    "abilityScores": {
+      "dex": 2,
+      "int": 2,
+      "wis": -2
+    },
+    "traits": []
+  },
+  {
+    "id": 805,
+    "base": 800,
+    "name": "Hellspawn (Devil-Spawn)",
+    "abilityScores": {
+      "con": 2,
+      "wis": 2,
+      "cha": -2
+    },
+    "traits": []
+  },
+  {
+    "id": 806,
+    "base": 800,
+    "name": "Hungerseed (Oni-Spawn)",
+    "abilityScores": {
+      "str": 2,
+      "wis": 2,
+      "cha": -2
+    },
+    "traits": []
+  },
+  {
+    "id": 807,
+    "base": 800,
+    "name": "Motherless (Qlippoth-Spawn)",
+    "abilityScores": {
+      "str": 2,
+      "wis": 2,
+      "int": -2
+    },
+    "traits": []
+  },
+  {
+    "id": 808,
+    "base": 800,
+    "name": "Pitborn (Demon-Spawn)",
+    "abilityScores": {
+      "str": 2,
+      "cha": 2,
+      "int": -2
+    },
+    "traits": []
+  },
+  {
+    "id": 809,
+    "base": 800,
+    "name": "Shackleborn (Kyton-Spawn)",
+    "abilityScores": {
+      "con": 2,
+      "cha": 2,
+      "wis": -2
+    },
+    "traits": []
+  },
+  {
+    "id": 810,
+    "base": 800,
+    "name": "Spitespawn (Div-Spawn)",
+    "abilityScores": {
+      "dex": 2,
+      "cha": 2,
+      "int": -2
+    },
+    "traits": []
+  }
+]

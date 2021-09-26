@@ -1,8 +1,9 @@
-import { Ability } from '../ability';
+import { AbilityScores } from '../ability';
 
 export interface Race {
   id: number;
   name: string;
-  abilityModifications: Record<Ability, number>;
-  traits: number[];
+  abilityScores?: Partial<AbilityScores> | number;
+  skills?: Record<string, number>;
+  traits?: number[];
 }

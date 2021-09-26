@@ -1,0 +1,18 @@
+[
+  {
+    "id": 600,
+    "name": "Half-Orc",
+    "abilityScores": 2,
+    "traits": []
+  },
+  {
+    "id": 601,
+    "base": 600,
+    "name": "Human-Raised"
+  },
+  {
+    "id": 602,
+    "base": 600,
+    "name": "Tribal"
+  }
+]

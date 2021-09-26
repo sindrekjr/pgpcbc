@@ -37,7 +37,7 @@ export const BaseAbilityScores: FC<BaseAbilityScoresProps> = ({
               </option>
             ))}
           </select>
-          <label htmlFor={a}>{a.substr(0, 3).toUpperCase()}</label>
+          <label htmlFor={a}>{a.toUpperCase()}</label>
         </Field>
       ))}
     </AbilityScoresWrapper>

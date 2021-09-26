@@ -1,0 +1,22 @@
+[
+  {
+    "id": 300,
+    "name": "Gnome",
+    "abilityScores": {
+      "con": 2,
+      "cha": 2,
+      "str": -2
+    },
+    "traits": []
+  },
+  {
+    "id": 301,
+    "base": 300,
+    "name": "Pyromaniac"
+  },
+  {
+    "id": 302,
+    "base": 300,
+    "name": "Traveler"
+  }
+]

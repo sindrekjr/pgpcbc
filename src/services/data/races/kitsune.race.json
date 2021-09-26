@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1100,
+    "name": "Kitsune",
+    "abilityScores": {
+      "dex": 2,
+      "cha": 2,
+      "str": -1
+    },
+    "traits": []
+  },
+  {
+    "id": 1101,
+    "base": 1100,
+    "name": "Keen Kitsune",
+    "abilityScores": {
+      "dex": 2,
+      "int": 2,
+      "str": -1
+    }
+  }
+]

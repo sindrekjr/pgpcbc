@@ -1,0 +1,21 @@
+[
+  {
+    "id": 500,
+    "name": "Half-Elf",
+    "abilityScores": 2,
+    "traits": []
+  },
+  {
+    "id": 501,
+    "base": 500,
+    "name": "Dual Heritage"
+  },
+  {
+    "id": 502,
+    "base": 500,
+    "name": "Kindred-Raised",
+    "abilityScores": {
+      "cha": 2
+    }
+  }
+]

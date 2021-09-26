@@ -1,0 +1,22 @@
+[
+  {
+    "id": 200,
+    "name": "Dwarf",
+    "abilityScores": {
+      "con": 2,
+      "wis": 2,
+      "cha": -2
+    },
+    "traits": []
+  },
+  {
+    "id": 201,
+    "base": 200,
+    "name": "Barrow Dwarf"
+  },
+  {
+    "id": 202,
+    "base": 200,
+    "name": "Unstoppable Dwarf"
+  }
+]

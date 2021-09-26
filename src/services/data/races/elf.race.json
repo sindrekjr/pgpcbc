@@ -1,0 +1,22 @@
+[
+  {
+    "id": 100,
+    "name": "Elf",
+    "abilityScores": {
+      "dex": 2,
+      "int": 2,
+      "con": -2
+    },
+    "traits": []
+  },
+  {
+    "id": 101,
+    "base": 100,
+    "name": "Blightborn"
+  },
+  {
+    "id": 102,
+    "base": 100,
+    "name": "Loremaster"
+  }
+]
