@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useRecoilValue } from 'recoil';
 
-import { classListState } from '../../state/class.state';
+import { classListState } from '../../state';
 import { TableCell } from './TableCell';
 import { TableSelect } from './TableSelect';
 

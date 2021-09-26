@@ -1,6 +1,6 @@
 import { atom, atomFamily, selector, selectorFamily } from 'recoil';
 
-import { Class } from '../models';
+import { Archetype, Class, PrestigeClass } from '../models';
 import { getAllClasses } from '../services';
 
 export const classListState = atom<Class[]>({
@@ -9,6 +9,21 @@ export const classListState = atom<Class[]>({
     key: 'classList/selector',
     get: getAllClasses,
   }),
+});
+
+export const primaryClassListSelector = selector<Class[]>({
+  key: 'primaryClassList/selector',
+  get: ({ get }) => (get(classListState) as Archetype[]).filter(c => !c.base),
+});
+
+export const archetypeListSelector = selector<Archetype[]>({
+  key: 'archetypeList/selector',
+  get: ({ get }) => (get(classListState) as Archetype[]).filter(c => c.base),
+});
+
+export const prestigeClassListSelector = selector<PrestigeClass[]>({
+  key: 'prestigeClassList/selector',
+  get: ({ get }) => (get(classListState) as PrestigeClass[]).filter(c => c.maxLevel),
 });
 
 export const classState = atomFamily<Class, number>({
@@ -21,5 +36,13 @@ export const classState = atomFamily<Class, number>({
 
       throw new Error(`No class found with id ${identifier}.`);
     },
+  }),
+});
+
+export const archetypesState = atomFamily<Archetype[], number>({
+  key: 'archetypes/state',
+  default: selectorFamily<Archetype[], number>({
+    key: 'archetypes/selector',
+    get: baseId => ({ get }) => get(archetypeListSelector).filter(({ base }) => base === baseId),
   }),
 });
