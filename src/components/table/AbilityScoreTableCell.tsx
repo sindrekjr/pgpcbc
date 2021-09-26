@@ -11,8 +11,8 @@ interface ScoreProps extends TableCellProps {
 }
 
 const Score = styled(TableCell)<ScoreProps>`
-  cursor: pointer;
   text-align: center;
+  cursor: ${({ disabled }) => disabled ? 'default' : 'pointer'};
 
   ${({ bonus }) => bonus && css`
     background: #cdc0a6;
