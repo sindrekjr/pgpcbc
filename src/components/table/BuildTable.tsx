@@ -20,14 +20,15 @@ const LevelCell = styled(TableCell)`
   width: ${rem(25)};
 `;
 
-export interface CharacterTableProps {
+export interface BuildTableProps {
+  buildId: number;
   character: Character;
 }
 
-export const CharacterTable: FC<CharacterTableProps> = ({ character }) => {
-  const { abilityScores, builds } = character; // TODO: don't cast
+export const BuildTable: FC<BuildTableProps> = ({ buildId, character }) => {
+  const { abilityScores } = character;
 
-  const [build, setBuild] = useRecoilState(buildState(builds ? builds[0] : -1));
+  const [build, setBuild] = useRecoilState(buildState(buildId));
   if (!build) return null;
 
   const { name, description, abilityScoreIncreases: asi, classes, feats } = build;

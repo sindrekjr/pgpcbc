@@ -6,7 +6,7 @@ import { rem } from 'polished';
 import sheet from '../../assets/sheet.jpg';
 import { Character } from '../../models';
 import { characterState } from '../../state';
-import { CharacterTable } from '../table';
+import { BuildTable } from '../table';
 import { BaseInformation } from './BaseInformation';
 
 const Sheet = styled.article`
@@ -32,6 +32,7 @@ export interface CharacterSheetProps {
 
 export const CharacterSheet: FC<CharacterSheetProps> = ({ id }) => {
   const [character, setCharacter] = useRecoilState(characterState(id));
+  const { builds: [buildId] } = character;
 
   const updateCharacter = (data: Partial<Character>) => {
     console.log('Updating character...', data);
@@ -41,10 +42,12 @@ export const CharacterSheet: FC<CharacterSheetProps> = ({ id }) => {
     });
   };
 
+  if (buildId === undefined) return null;
+
   return (
     <Sheet>
       <BaseInformation character={character} updateCharacter={updateCharacter} />
-      <CharacterTable character={character} />
+      <BuildTable buildId={buildId} character={character} />
     </Sheet>
   );
 };

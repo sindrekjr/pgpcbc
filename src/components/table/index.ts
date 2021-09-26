@@ -1,1 +1,1 @@
-export * from './CharacterTable';
+export * from './BuildTable';
