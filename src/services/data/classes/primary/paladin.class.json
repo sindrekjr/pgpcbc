@@ -1,0 +1,49 @@
+{
+  "id": 1600,
+  "name": "Paladin",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 1601,
+      "base": 1600,
+      "name": "Divine Guardian",
+      "levels": []
+    },
+    {
+      "id": 1602,
+      "base": 1600,
+      "name": "Divine Hunter",
+      "levels": []
+    },
+    {
+      "id": 1603,
+      "base": 1600,
+      "name": "Divine Scion",
+      "levels": []
+    },
+    {
+      "id": 1604,
+      "base": 1600,
+      "name": "Hospitaler",
+      "levels": []
+    },
+    {
+      "id": 1605,
+      "base": 1600,
+      "name": "Martyr",
+      "levels": []
+    },
+    {
+      "id": 1606,
+      "base": 1600,
+      "name": "Stonelord",
+      "levels": []
+    },
+    {
+      "id": 1607,
+      "base": 1600,
+      "name": "Warrior of the Holy Light",
+      "levels": []
+    }
+  ]
+}

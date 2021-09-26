@@ -1,0 +1,49 @@
+{
+  "id": 1500,
+  "name": "Oracle",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 1501,
+      "base": 1500,
+      "name": "Divine Herbalist",
+      "levels": []
+    },
+    {
+      "id": 1502,
+      "base": 1500,
+      "name": "Enlightened Philosopher",
+      "levels": []
+    },
+    {
+      "id": 1503,
+      "base": 1500,
+      "name": "Lone Strider",
+      "levels": []
+    },
+    {
+      "id": 1504,
+      "base": 1500,
+      "name": "Possessed Oracle",
+      "levels": []
+    },
+    {
+      "id": 1505,
+      "base": 1500,
+      "name": "Purifier",
+      "levels": []
+    },
+    {
+      "id": 1506,
+      "base": 1500,
+      "name": "Seeker",
+      "levels": []
+    },
+    {
+      "id": 1507,
+      "base": 1500,
+      "name": "Wind Whisperer",
+      "levels": []
+    }
+  ]
+}

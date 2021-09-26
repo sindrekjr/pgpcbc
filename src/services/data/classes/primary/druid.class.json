@@ -1,0 +1,43 @@
+{
+  "id": 800,
+  "name": "Druid",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 801,
+      "base": 800,
+      "name": "Blight Druid",
+      "levels": []
+    },
+    {
+      "id": 802,
+      "base": 800,
+      "name": "Defender of the True World",
+      "levels": []
+    },
+    {
+      "id": 803,
+      "base": 800,
+      "name": "Drovier",
+      "levels": []
+    },
+    {
+      "id": 804,
+      "base": 800,
+      "name": "Elemental Rampager",
+      "levels": []
+    },
+    {
+      "id": 805,
+      "base": 800,
+      "name": "Feyspeaker",
+      "levels": []
+    },
+    {
+      "id": 806,
+      "base": 800,
+      "name": "Primal Druid",
+      "levels": []
+    }
+  ]
+}

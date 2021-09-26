@@ -1,0 +1,78 @@
+{
+  "id": 0,
+  "name": "Dreadful Crusader",
+  "abilityScoreIncreases": {
+    "4": "strength",
+    "8": "strength",
+    "12": "strength",
+    "16": "strength",
+    "20": "charisma"
+  },
+  "classes": {
+    "1": 1600,
+    "2": 1600,
+    "3": 1600,
+    "4": 1701,
+    "5": 1701,
+    "6": 607,
+    "7": 607,
+    "8": 1806,
+    "9": 2306,
+    "10": 1600,
+    "11": 1701,
+    "12": 1701,
+    "13": 1701,
+    "14": 1701,
+    "15": 1600,
+    "16": 1600,
+    "17": 1600,
+    "18": 1600,
+    "19": 1600,
+    "20": 1600
+  },
+  "feats": {
+    "1": {
+      "bonus1": "Shield Focus",
+      "general": "Dodge"
+    },
+    "3": {
+      "general": "Power Attack"
+    },
+    "5": {
+      "bonus1": "Two-Weapon Fighting",
+      "general": "Weapon Focus: Longsword"
+    },
+    "6": {
+      "bonus1": "Outflank"
+    },
+    "7": {
+      "bonus1": "Dazzling Display",
+      "general": "Cornugon Smash"
+    },
+    "9": {
+      "bonus1": "Weapon Focus: Heavy Shield",
+      "general": "Shatter Defenses"
+    },
+    "11": {
+      "general": "Improved Critical"
+    },
+    "13": {
+      "general": "Dreadful Carnage"
+    },
+    "14": {
+      "bonus1": "Shield Master"
+    },
+    "15": {
+      "general": "Bashing Finish"
+    },
+    "17": {
+      "general": "Improved Two-Weapon Fighting"
+    },
+    "19": {
+      "general": "Greater Two-Weapon Fighting"
+    }
+  },
+  "skills": {
+    
+  }
+}

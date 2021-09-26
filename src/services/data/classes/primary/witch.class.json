@@ -1,0 +1,43 @@
+{
+  "id": 2400,
+  "name": "Witch",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 2401,
+      "base": 2400,
+      "name": "Elemental Witch",
+      "levels": []
+    },
+    {
+      "id": 2402,
+      "base": 2400,
+      "name": "Hagbound",
+      "levels": []
+    },
+    {
+      "id": 2403,
+      "base": 2400,
+      "name": "Hex Channeler",
+      "levels": []
+    },
+    {
+      "id": 2404,
+      "base": 2400,
+      "name": "Ley Line Guardian",
+      "levels": []
+    },
+    {
+      "id": 2405,
+      "base": 2400,
+      "name": "Archeologist",
+      "levels": []
+    },
+    {
+      "id": 2406,
+      "base": 2400,
+      "name": "Witch of the Veil",
+      "levels": []
+    }
+  ]
+}

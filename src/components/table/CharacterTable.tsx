@@ -8,6 +8,8 @@ import { Ability, Character } from '../../models';
 import { AbilityScoreTableCell } from './AbilityScoreTableCell';
 import { TableCell } from './TableCell';
 import { TableRow } from './TableRow';
+import { ClassTableCell } from './ClassTableCell';
+import { TableSelect } from './TableSelect';
 
 const Table = styled.table`
   width: 100%;
@@ -16,17 +18,6 @@ const Table = styled.table`
 const LevelCell = styled(TableCell)`
   text-align: center;
   width: ${rem(25)};
-`;
-
-const ClassCell = styled(TableCell)`
-  width: ${rem(220)};
-`;
-
-const FeatCell = styled(TableCell)`
-  select {
-    background: transparent;
-    border: 0;
-  }
 `;
 
 export interface CharacterTableProps {
@@ -69,12 +60,13 @@ export const CharacterTable: FC<CharacterTableProps> = ({ character }) => {
         <th>Traits</th>
       </thead>
       <tbody>
-        {(Object.entries(classes) as unknown as [number, string][]).map(([level, cl]) => (
+        {(Object.entries(classes) as unknown as [number, number][]).map(([level, cl]) => (
           <TableRow key={`${cl}-${level}`}>
             <LevelCell>{level}</LevelCell>
-            <ClassCell>
+            <ClassTableCell classId={cl} />
+            {/* <ClassCell>
               {`${cl} (${Object.values(classes).slice(0, level).filter(c => c === cl).length})`}
-            </ClassCell>
+            </ClassCell> */}
             {Object.entries(abilityScores).map(([a, score]) => (
               <AbilityScoreTableCell
                 key={a}
@@ -85,21 +77,21 @@ export const CharacterTable: FC<CharacterTableProps> = ({ character }) => {
                 onSelect={ability => changeAbilityScoreIncrease(ability, level)}
               />
             ))}
-            <FeatCell disabled={level % 2 === 0}>
+            <TableCell disabled={level % 2 === 0}>
               {level % 2 !== 0 && (
-                <select name="feat">
+                <TableSelect name="feat">
                   <option>
                     {feats[level] && feats[level].general}
                   </option>
-                </select>
+                </TableSelect>
               )}
-            </FeatCell>
-            <FeatCell>
+            </TableCell>
+            <TableCell>
               {feats[level] && feats[level].bonus1}
-            </FeatCell>
-            <FeatCell>
+            </TableCell>
+            <TableCell>
               {feats[level] && feats[level].bonus2}
-            </FeatCell>
+            </TableCell>
             <TableCell></TableCell>
           </TableRow>
         ))}

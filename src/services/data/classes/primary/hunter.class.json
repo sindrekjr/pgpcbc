@@ -1,0 +1,43 @@
+{
+  "id": 1000,
+  "name": "Hunter",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 1001,
+      "base": 1000,
+      "name": "Colluding Scoundrel",
+      "levels": []
+    },
+    {
+      "id": 1002,
+      "base": 1000,
+      "name": "Divine Hound",
+      "levels": []
+    },
+    {
+      "id": 1003,
+      "base": 1000,
+      "name": "Divine Hunter",
+      "levels": []
+    },
+    {
+      "id": 1004,
+      "base": 1000,
+      "name": "Forester",
+      "levels": []
+    },
+    {
+      "id": 1005,
+      "base": 1000,
+      "name": "Urban Hunter",
+      "levels": []
+    },
+    {
+      "id": 1006,
+      "base": 1000,
+      "name": "Wandering Marksman",
+      "levels": []
+    }
+  ]
+}

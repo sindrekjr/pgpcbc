@@ -1,0 +1,43 @@
+{
+  "id": 700,
+  "name": "Cleric",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 701,
+      "base": 700,
+      "name": "Angelfire Apostle",
+      "levels": []
+    },
+    {
+      "id": 702,
+      "base": 700,
+      "name": "Crusader",
+      "levels": []
+    },
+    {
+      "id": 703,
+      "base": 700,
+      "name": "Devilbane Priest",
+      "levels": []
+    },
+    {
+      "id": 704,
+      "base": 700,
+      "name": "Ecclesitheurge",
+      "levels": []
+    },
+    {
+      "id": 705,
+      "base": 700,
+      "name": "Herald Caller",
+      "levels": []
+    },
+    {
+      "id": 706,
+      "base": 700,
+      "name": "Priest of Balance",
+      "levels": []
+    }
+  ]
+}

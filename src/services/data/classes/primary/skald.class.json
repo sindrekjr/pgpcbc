@@ -1,0 +1,43 @@
+{
+  "id": 2000,
+  "name": "Skald",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 2001,
+      "base": 2000,
+      "name": "Battle Scion",
+      "levels": []
+    },
+    {
+      "id": 2002,
+      "base": 2000,
+      "name": "Battle Singer",
+      "levels": []
+    },
+    {
+      "id": 2003,
+      "base": 2000,
+      "name": "Court Poet",
+      "levels": []
+    },
+    {
+      "id": 2004,
+      "base": 2000,
+      "name": "Demon Dancer",
+      "levels": []
+    },
+    {
+      "id": 2005,
+      "base": 2000,
+      "name": "Herald of the Horn",
+      "levels": []
+    },
+    {
+      "id": 2006,
+      "base": 2000,
+      "name": "Hunt Caller",
+      "levels": []
+    }
+  ]
+}

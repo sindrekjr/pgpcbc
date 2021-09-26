@@ -1,0 +1,49 @@
+{
+  "id": 1900,
+  "name": "Shaman",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 1901,
+      "base": 1900,
+      "name": "Possessed Shaman",
+      "levels": []
+    },
+    {
+      "id": 1902,
+      "base": 1900,
+      "name": "Shadow Shaman",
+      "levels": []
+    },
+    {
+      "id": 1903,
+      "base": 1900,
+      "name": "Spirit Hunter",
+      "levels": []
+    },
+    {
+      "id": 1904,
+      "base": 1900,
+      "name": "Spirit Warden",
+      "levels": []
+    },
+    {
+      "id": 1905,
+      "base": 1900,
+      "name": "Unsworn Shaman",
+      "levels": []
+    },
+    {
+      "id": 1906,
+      "base": 1900,
+      "name": "Wildland Shaman",
+      "levels": []
+    },
+    {
+      "id": 1907,
+      "base": 1900,
+      "name": "Witch Doctor",
+      "levels": []
+    }
+  ]
+}

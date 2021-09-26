@@ -1,0 +1,45 @@
+{
+  "id": 400,
+  "name": "Bard",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 401,
+      "base": 400,
+      "name": "Archeologist",
+      "levels": []
+    },    
+    {
+      "id": 402,
+      "base": 400,
+      "name": "Beast Tamer",
+      "levels": []
+    },    
+    {
+      "id": 403,
+      "base": 400,
+      "name": "Dirge Bard",
+      "levels": []
+    },    
+    {
+      "id": 404,
+      "base": 400,
+      "name": "Flame Dancer",
+      "levels": []
+    },    
+    {
+      "id": 405,
+      "base": 400,
+      "name": "Thundercaller",
+      "levels": []
+    },    
+    {
+      "id": 406,
+      "base": 400,
+      "name": "Tranquil Whisperer",
+      "levels": []
+    }
+  ]
+}
+
+

@@ -1,0 +1,43 @@
+{
+  "id": 1700,
+  "name": "Ranger",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 1701,
+      "base": 1700,
+      "name": "Demonslayer",
+      "levels": []
+    },
+    {
+      "id": 1702,
+      "base": 1700,
+      "name": "Espionage Expert",
+      "levels": []
+    },
+    {
+      "id": 1703,
+      "base": 1700,
+      "name": "Flamewarden",
+      "levels": []
+    },
+    {
+      "id": 1704,
+      "base": 1700,
+      "name": "Freebooter",
+      "levels": []
+    },
+    {
+      "id": 1705,
+      "base": 1700,
+      "name": "Nomad",
+      "levels": []
+    },
+    {
+      "id": 1706,
+      "base": 1700,
+      "name": "Stormwalker",
+      "levels": []
+    }
+  ]
+}

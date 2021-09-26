@@ -1,0 +1,49 @@
+{
+  "id": 2500,
+  "name": "Wizard",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 2501,
+      "base": 2500,
+      "name": "Arcane Bomber",
+      "levels": []
+    },
+    {
+      "id": 2502,
+      "base": 2500,
+      "name": "Cruromancer",
+      "levels": []
+    },
+    {
+      "id": 2503,
+      "base": 2500,
+      "name": "Elemental Specialist",
+      "levels": []
+    },
+    {
+      "id": 2504,
+      "base": 2500,
+      "name": "Exploiter Wizard",
+      "levels": []
+    },
+    {
+      "id": 2505,
+      "base": 2500,
+      "name": "Scroll Savant",
+      "levels": []
+    },
+    {
+      "id": 2506,
+      "base": 2500,
+      "name": "Spell Master",
+      "levels": []
+    },
+    {
+      "id": 2507,
+      "base": 2500,
+      "name": "Thassilonian Specialist",
+      "levels": []
+    }
+  ]
+}

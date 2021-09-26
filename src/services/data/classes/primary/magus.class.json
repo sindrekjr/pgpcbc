@@ -1,0 +1,49 @@
+{
+  "id": 1300,
+  "name": "Magus",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 1301,
+      "base": 1300,
+      "name": "Arcane Rider",
+      "levels": []
+    },
+    {
+      "id": 1302,
+      "base": 1300,
+      "name": "Armored Battlemage",
+      "levels": []
+    },
+    {
+      "id": 1303,
+      "base": 1300,
+      "name": "Eldritch Archer",
+      "levels": []
+    },
+    {
+      "id": 1304,
+      "base": 1300,
+      "name": "Eldritch Scion",
+      "levels": []
+    },
+    {
+      "id": 1305,
+      "base": 1300,
+      "name": "Hexcrafter",
+      "levels": []
+    },
+    {
+      "id": 1306,
+      "base": 1300,
+      "name": "Spell Dancer",
+      "levels": []
+    },
+    {
+      "id": 1307,
+      "base": 1300,
+      "name": "Sword Saint",
+      "levels": []
+    }
+  ]
+}

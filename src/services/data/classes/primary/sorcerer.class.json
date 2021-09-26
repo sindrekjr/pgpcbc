@@ -1,0 +1,49 @@
+{
+  "id": 2200,
+  "name": "Sorcerer",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 2201,
+      "base": 2200,
+      "name": "Crossblooded",
+      "levels": []
+    },
+    {
+      "id": 2202,
+      "base": 2200,
+      "name": "Empyreal Sorcerer",
+      "levels": []
+    },
+    {
+      "id": 2203,
+      "base": 2200,
+      "name": "Nine Tailed Heir",
+      "levels": []
+    },
+    {
+      "id": 2204,
+      "base": 2200,
+      "name": "Overwhelming Mage",
+      "levels": []
+    },
+    {
+      "id": 2205,
+      "base": 2200,
+      "name": "Sage Sorcerer",
+      "levels": []
+    },
+    {
+      "id": 2206,
+      "base": 2200,
+      "name": "Seeker",
+      "levels": []
+    },
+    {
+      "id": 2207,
+      "base": 2200,
+      "name": "Sylvan Sorcerer",
+      "levels": []
+    }
+  ]
+}

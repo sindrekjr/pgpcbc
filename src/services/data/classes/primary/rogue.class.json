@@ -1,0 +1,49 @@
+{
+  "id": 1800,
+  "name": "Rogue",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 1801,
+      "base": 1800,
+      "name": "Eldritch Scoundrel",
+      "levels": []
+    },
+    {
+      "id": 1802,
+      "base": 1800,
+      "name": "Knife Master",
+      "levels": []
+    },
+    {
+      "id": 1803,
+      "base": 1800,
+      "name": "Master of All",
+      "levels": []
+    },
+    {
+      "id": 1804,
+      "base": 1800,
+      "name": "Rowdy",
+      "levels": []
+    },
+    {
+      "id": 1805,
+      "base": 1800,
+      "name": "Sylvan Trickster",
+      "levels": []
+    },
+    {
+      "id": 1806,
+      "base": 1800,
+      "name": "Thug",
+      "levels": []
+    },
+    {
+      "id": 1807,
+      "base": 1800,
+      "name": "Underground Chemist",
+      "levels": []
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": 1200,
+  "name": "Kineticist",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 1201,
+      "base": 1200,
+      "name": "Blood Kineticist",
+      "levels": []
+    },
+    {
+      "id": 1202,
+      "base": 1200,
+      "name": "Dark Elementalist",
+      "levels": []
+    },
+    {
+      "id": 1203,
+      "base": 1200,
+      "name": "Elemental Engine",
+      "levels": []
+    },
+    {
+      "id": 1204,
+      "base": 1200,
+      "name": "Kinetic Knight",
+      "levels": []
+    },
+    {
+      "id": 1205,
+      "base": 1200,
+      "name": "Overwhelming Soul",
+      "levels": []
+    },
+    {
+      "id": 1206,
+      "base": 1200,
+      "name": "Psychokineticist",
+      "levels": []
+    }
+  ]
+}

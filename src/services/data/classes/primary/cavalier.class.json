@@ -1,0 +1,51 @@
+{
+  "id": 600,
+  "name": "Cavalier",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 601,
+      "base": 600,
+      "name": "Beast Rider",
+      "levels": []
+    },    
+    {
+      "id": 602,
+      "base": 600,
+      "name": "Cavalier of the Paw",
+      "levels": []
+    },    
+    {
+      "id": 603,
+      "base": 600,
+      "name": "Disciple of the Pike",
+      "levels": []
+    },    
+    {
+      "id": 604,
+      "base": 600,
+      "name": "Fearsome Leader",
+      "levels": []
+    },    
+    {
+      "id": 605,
+      "base": 600,
+      "name": "Gendarme",
+      "levels": []
+    },    
+    {
+      "id": 606,
+      "base": 600,
+      "name": "Knight of the Wall",
+      "levels": []
+    },    
+    {
+      "id": 607,
+      "base": 600,
+      "name": "Standard Bearer",
+      "levels": []
+    }
+  ]
+}
+
+

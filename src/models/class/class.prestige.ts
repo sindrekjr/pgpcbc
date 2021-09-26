@@ -1,15 +1,6 @@
-import { Class, ClassOptions } from './class';
+import { Class } from './class';
 import { Prerequisite } from './class.prerequisite';
 
-export interface PrestigeClassOptions extends ClassOptions {
+export interface PrestigeClass extends Class {
   prerequisites: Prerequisite[];
-}
-
-export class PrestigeClass extends Class {
-  prerequisites: Prerequisite[];
-
-  constructor({ name, levels, prerequisites }: PrestigeClassOptions) {
-    super({ name, levels });
-    this.prerequisites = prerequisites;
-  }
 }

@@ -1,0 +1,45 @@
+{
+  "id": 200,
+  "name": "Arcanist",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 201,
+      "base": 200,
+      "name": "Brown Fur Transmuter",
+      "levels": []
+    },    
+    {
+      "id": 202,
+      "base": 200,
+      "name": "Eldritch Font",
+      "levels": []
+    },    
+    {
+      "id": 203,
+      "base": 200,
+      "name": "Nature Mage",
+      "levels": []
+    },    
+    {
+      "id": 204,
+      "base": 200,
+      "name": "Phantasmal Mage",
+      "levels": []
+    },    
+    {
+      "id": 205,
+      "base": 200,
+      "name": "Unlettered Arcanist",
+      "levels": []
+    },    
+    {
+      "id": 206,
+      "base": 200,
+      "name": "White Mage",
+      "levels": []
+    }
+  ]
+}
+
+

@@ -1,0 +1,49 @@
+{
+  "id": 500,
+  "name": "Bloodrager",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 501,
+      "base": 500,
+      "name": "Bloodrider",
+      "levels": []
+    },
+    {
+      "id": 502,
+      "base": 500,
+      "name": "Greenrager",
+      "levels": []
+    },
+    {
+      "id": 503,
+      "base": 500,
+      "name": "Mixed-Blood Rager",
+      "levels": []
+    },
+    {
+      "id": 504,
+      "base": 500,
+      "name": "Primalist",
+      "levels": []
+    },
+    {
+      "id": 505,
+      "base": 500,
+      "name": "Reformed Fiend",
+      "levels": []
+    },
+    {
+      "id": 506,
+      "base": 500,
+      "name": "Spelleater",
+      "levels": []
+    },
+    {
+      "id": 507,
+      "base": 500,
+      "name": "Steelblood",
+      "levels": []
+    }
+  ]
+}

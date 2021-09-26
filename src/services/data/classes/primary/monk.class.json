@@ -1,0 +1,49 @@
+{
+  "id": 1400,
+  "name": "Monk",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 1401,
+      "base": 1400,
+      "name": "Quarterstaff Master",
+      "levels": []
+    },
+    {
+      "id": 1402,
+      "base": 1400,
+      "name": "Scaled Fist",
+      "levels": []
+    },
+    {
+      "id": 1403,
+      "base": 1400,
+      "name": "Sensei",
+      "levels": []
+    },
+    {
+      "id": 1404,
+      "base": 1400,
+      "name": "Sohei",
+      "levels": []
+    },
+    {
+      "id": 1405,
+      "base": 1400,
+      "name": "Student of Stone",
+      "levels": []
+    },
+    {
+      "id": 1406,
+      "base": 1400,
+      "name": "Traditional Monk",
+      "levels": []
+    },
+    {
+      "id": 1407,
+      "base": 1400,
+      "name": "Zen Archer",
+      "levels": []
+    }
+  ]
+}

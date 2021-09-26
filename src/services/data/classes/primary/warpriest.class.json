@@ -1,0 +1,43 @@
+{
+  "id": 2300,
+  "name": "Warpriest",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 2301,
+      "base": 2300,
+      "name": "Champion of the Faith",
+      "levels": []
+    },
+    {
+      "id": 2302,
+      "base": 2300,
+      "name": "Cult Leader",
+      "levels": []
+    },
+    {
+      "id": 2303,
+      "base": 2300,
+      "name": "Disenchanter",
+      "levels": []
+    },
+    {
+      "id": 2304,
+      "base": 2300,
+      "name": "Feral Champion",
+      "levels": []
+    },
+    {
+      "id": 2305,
+      "base": 2300,
+      "name": "Proclaimer",
+      "levels": []
+    },
+    {
+      "id": 2306,
+      "base": 2300,
+      "name": "Shieldbearer",
+      "levels": []
+    }
+  ]
+}

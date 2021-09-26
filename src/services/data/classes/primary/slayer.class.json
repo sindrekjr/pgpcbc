@@ -1,0 +1,49 @@
+{
+  "id": 2100,
+  "name": "Slayer",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 2101,
+      "base": 2100,
+      "name": "Arcane Enforcer",
+      "levels": []
+    },
+    {
+      "id": 2102,
+      "base": 2100,
+      "name": "Deliverer",
+      "levels": []
+    },
+    {
+      "id": 2103,
+      "base": 2100,
+      "name": "Executioner",
+      "levels": []
+    },
+    {
+      "id": 2104,
+      "base": 2100,
+      "name": "Imitator",
+      "levels": []
+    },
+    {
+      "id": 2105,
+      "base": 2100,
+      "name": "Spawn Slayer",
+      "levels": []
+    },
+    {
+      "id": 2106,
+      "base": 2100,
+      "name": "Stygian Slayer",
+      "levels": []
+    },
+    {
+      "id": 2107,
+      "base": 2100,
+      "name": "Vanguard",
+      "levels": []
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 100,
+  "name": "Alchemist",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 101,
+      "base": 0,
+      "name": "Chirurgeon",
+      "levels": []
+    },
+    {
+      "id": 102,
+      "base": 0,
+      "name": "Grenadier",
+      "levels": []
+    },
+    {
+      "id": 103,
+      "base": 0,
+      "name": "Incense Synthesizer",
+      "levels": []
+    },
+    {
+      "id": 104,
+      "base": 0,
+      "name": "Metamorph",
+      "levels": []
+    },
+    {
+      "id": 105,
+      "base": 0,
+      "name": "Preservationist",
+      "levels": []
+    },
+    {
+      "id": 106,
+      "base": 0,
+      "name": "Vivisectionist",
+      "levels": []
+    }
+  ]
+}
+

@@ -4,7 +4,7 @@ export interface CharacterBuild {
   id: number;
   name: string;
   abilityScoreIncreases: Record<number | string, Ability | string>;
-  classes: Record<number | string, string>;
+  classes: Record<number | string, number>;
   feats: Record<number | string, {
     bonus1?: string;
     bonus2?: string;

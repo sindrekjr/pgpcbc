@@ -1,0 +1,44 @@
+{
+  "id": 300,
+  "name": "Barbarian",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 301,
+      "base": 300,
+      "name": "Armored Hulk",
+      "levels": []
+    },
+    {
+      "id": 302,
+      "base": 300,
+      "name": "Beastkin Berserker",
+      "levels": []
+    },
+    {
+      "id": 303,
+      "base": 300,
+      "name": "Instinctual Warrior",
+      "levels": []
+    },
+    {
+      "id": 304,
+      "base": 300,
+      "name": "Invulnerable Rager",
+      "levels": []
+    },
+    {
+      "id": 305,
+      "base": 300,
+      "name": "Mad Dog",
+      "levels": []
+    },
+    {
+      "id": 306,
+      "base": 300,
+      "name": "Pack Rager",
+      "levels": []
+    }
+  ]
+}
+

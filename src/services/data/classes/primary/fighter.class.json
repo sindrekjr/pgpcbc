@@ -1,0 +1,43 @@
+{
+  "id": 900,
+  "name": "Fighter",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 901,
+      "base": 900,
+      "name": "Aldori Defender",
+      "levels": []
+    },
+    {
+      "id": 902,
+      "base": 900,
+      "name": "Armiger",
+      "levels": []
+    },
+    {
+      "id": 903,
+      "base": 900,
+      "name": "Dragonhear Scion",
+      "levels": []
+    },
+    {
+      "id": 904,
+      "base": 900,
+      "name": "Mutation Warrior",
+      "levels": []
+    },
+    {
+      "id": 905,
+      "base": 900,
+      "name": "Tower Shield Specialist",
+      "levels": []
+    },
+    {
+      "id": 906,
+      "base": 900,
+      "name": "Two-Handed Fighter",
+      "levels": []
+    }
+  ]
+}

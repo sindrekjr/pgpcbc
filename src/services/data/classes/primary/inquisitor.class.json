@@ -1,0 +1,43 @@
+{
+  "id": 1100,
+  "name": "Inquisitor",
+  "levels": [],
+  "archetypes": [
+    {
+      "id": 1101,
+      "base": 1100,
+      "name": "Faith Hunter",
+      "levels": []
+    },
+    {
+      "id": 1102,
+      "base": 1100,
+      "name": "Judge",
+      "levels": []
+    },
+    {
+      "id": 1103,
+      "base": 1100,
+      "name": "Monster Tactician",
+      "levels": []
+    },
+    {
+      "id": 1104,
+      "base": 1100,
+      "name": "Sacred Huntsmaster",
+      "levels": []
+    },
+    {
+      "id": 1105,
+      "base": 1100,
+      "name": "Sactified Slayer",
+      "levels": []
+    },
+    {
+      "id": 1106,
+      "base": 1100,
+      "name": "Tactical Leader",
+      "levels": []
+    }
+  ]
+}
