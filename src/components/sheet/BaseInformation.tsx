@@ -2,23 +2,15 @@ import React, { FC, KeyboardEvent, useState } from 'react';
 import styled from 'styled-components';
 
 import {
-  Ability,
   Character,
   getAlignmentName,
   getAlignments,
 } from '../../models';
 import { Field } from '../common';
+import { BaseAbilityScores } from './BaseAbilityScores';
 
 const InformationSection = styled.section`
   display: flex;
-`;
-
-const AbilityScoresWrapper = styled.div`
-  display: flex;
-  
-  input {
-    text-align: center;
-  }
 `;
 
 export interface BaseInformationProps {
@@ -35,29 +27,6 @@ export const BaseInformation: FC<BaseInformationProps> = ({
 
   const handleKeyDown = ({ key }: KeyboardEvent<HTMLInputElement>, data: Partial<Character>) => {
     if (key === 'Enter') updateCharacter(data);
-  };
-
-  const handleAbilityScoreKeyDown = (
-    { key }: KeyboardEvent<HTMLInputElement>,
-    abilityToChange: Ability,
-  ) => {
-    if (key === 'ArrowUp' || key === 'ArrowRight') {
-      updateCharacter({
-        abilityScores: {
-          ...abilityScores,
-          [abilityToChange]: abilityScores[abilityToChange] + 1,
-        },
-      });
-    }
-
-    if (key === 'ArrowDown' || key === 'ArrowLeft') {
-      updateCharacter({
-        abilityScores: {
-          ...abilityScores,
-          [abilityToChange]: abilityScores[abilityToChange] - 1,
-        },
-      });
-    }
   };
 
   return (
@@ -86,19 +55,7 @@ export const BaseInformation: FC<BaseInformationProps> = ({
         </select>
         <label htmlFor="alignment">Alignment</label>
       </Field>
-      <AbilityScoresWrapper>
-        {Object.entries(abilityScores).map(([a, score]) => (
-          <Field key={a} width={20}>
-            <input
-              type="numeric"
-              name={a}
-              value={score}
-              onKeyDown={e => handleAbilityScoreKeyDown(e, a as Ability)}
-            />
-            <label htmlFor={a}>{a.substr(0, 3).toUpperCase()}</label>
-          </Field>
-        ))}
-      </AbilityScoresWrapper>
+      <BaseAbilityScores abilityScores={abilityScores} updateCharacter={updateCharacter} />
     </InformationSection>
   );
 };

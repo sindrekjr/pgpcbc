@@ -21,7 +21,9 @@ const Sheet = styled.article`
   padding: ${rem(16)};
   width: 100%;
 
-  font-family: cursive;
+  * {
+    font-family: 'Sylfaen';
+  }
 `;
 
 export interface CharacterSheetProps {

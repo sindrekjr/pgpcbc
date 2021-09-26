@@ -10,19 +10,21 @@ export const Field = styled.fieldset<{ unsaved?: boolean, width?: number }>`
 
   width: 0%;
 
+  input, select, label {
+    font-family: serif;
+  }
+
   input, select {
     background: none;
     border: none;
     border-bottom: ${rem(1)} dotted #290a0a;
 
-    font-family: cursive;
     font-size: ${rem(16)};
 
     width: ${({ width = 100 }) => rem(width)};
   }
 
   label {
-    font-family: serif;
     font-size: ${rem(8)};
   }
 
