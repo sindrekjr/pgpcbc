@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 
@@ -22,11 +22,8 @@ export const BaseAbilityScores: FC<BaseAbilityScoresProps> = ({
   updateCharacter,
 }) => {
   const {
-    abilityScoreChoiceIncrease: choiceMod,
-    abilityScores: mods,
+    abilityScores: racialAbilityScoreIncreases,
   } = useRecoilValue(raceState(raceId));
-
-  const [choice, setChoice] = useState<Ability | null>(choiceMod ? 'str' : null);
 
   const onChange = (ability: Ability, newValue: number) => {
     updateCharacter({
@@ -38,40 +35,32 @@ export const BaseAbilityScores: FC<BaseAbilityScoresProps> = ({
   };
 
   const getModForAbility = (ability: Ability): number => (
-    choiceMod
-      ? choice === ability ? choiceMod : 0
-      : mods ? mods[ability] || 0 : 0
+    racialAbilityScoreIncreases ? racialAbilityScoreIncreases[ability] || 0 : 0
   );
 
-  const getOptionsForAbility = (ability: Ability) => {
-    const array = Array.from({ length: 18 }, (_, n) => n + 1).filter(n => n > 6);
-    const mod = getModForAbility(ability);
-    return array.map(n => n + mod);
-  };
-
-  const getModString = (mod: number) => (
-    mod === 0
+  const getIncreaseAsString = (increase: number) => (
+    increase === 0
       ? ''
-      : mod > 0 ? `+${mod}` : mod
+      : increase > 0 ? `+${increase}` : increase
   );
 
   return (
     <AbilityScoresWrapper>
-      {Object.entries(abilityScores).map(([a, score]) => (
-        <Field key={a} width={40}>
+      {(Object.entries(abilityScores) as [Ability, number][]).map(([ability, score]) => (
+        <Field key={ability} width={40}>
           <select
-            name={a}
+            name={ability}
             value={score}
-            onChange={e => onChange(a as Ability, parseInt(e.target.value))}
+            onChange={e => onChange(ability, parseInt(e.target.value))}
           >
-            {getOptionsForAbility(a as Ability).map(n => (
+            {Array.from({ length: 18 }, (_, n) => n + 1).filter(n => n > 6).map(n => (
               <option key={n} value={n}>
                 {n}
               </option>
             ))}
           </select>
-          <label htmlFor={a} onClick={() => choiceMod && setChoice(a as Ability)}>
-            {`${a.toUpperCase()} ${getModString(getModForAbility(a as Ability))}`}
+          <label htmlFor={ability}>
+            {`${ability.toUpperCase()} ${getIncreaseAsString(getModForAbility(ability))}`}
           </label>
         </Field>
       ))}
