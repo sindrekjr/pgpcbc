@@ -6,7 +6,6 @@ import { TableCell } from './TableCell';
 export const TableRow = styled.tr`
   &:first-child {
     border-radius: ${rem(20)};
-    /* border-radius: ${rem(20)} 0 0 0; */
 
     ${TableCell}:first-child {
       border-radius: ${rem(6)} 0 0 0;

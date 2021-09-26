@@ -19,12 +19,13 @@ const Score = styled(TableCell)<ScoreProps>`
   `}
 
   ${({ selected }) => selected && css`
-    background: #279f27;
-    border: ${rem(1)} solid #a5a56a;
+    background: #926a82;
+    border: ${rem(1)} solid #dad4ce;
+    color: white;
   `}
 
   ${({ bonus, selected }) => bonus && selected && css`
-    background: -webkit-linear-gradient(145deg, #cdc0a6 30%, #279f27 40%);
+    background: -webkit-linear-gradient(145deg, #cdc0a6 30%, #926a82 40%);
   `}
 `;
 

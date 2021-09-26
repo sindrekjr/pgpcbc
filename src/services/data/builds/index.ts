@@ -1,7 +1,7 @@
-import { CharacterBuild } from '../../../models';
+import { Build } from '../../../models';
 
 import PennyDreadful from './PennyDreadful.build.json';
 
-export const builds: CharacterBuild[] = [
+export const builds: Build[] = [
   PennyDreadful,
 ];

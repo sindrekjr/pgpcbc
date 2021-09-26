@@ -13,6 +13,10 @@ import { TableSelect } from './TableSelect';
 
 const Table = styled.table`
   width: 100%;
+
+  th {
+    text-align: left;
+  }
 `;
 
 const LevelCell = styled(TableCell)`
@@ -67,7 +71,8 @@ export const BuildTable: FC<BuildTableProps> = ({ buildId, character }) => {
             <th />
             <th>Class</th>
             <th colSpan={Object.keys(abilityScores).length} />
-            <th colSpan={3}>Feats</th>
+            <th>Feats (general)</th>
+            <th colSpan={2}>Feats (bonus)</th>
             <th>Traits</th>
           </tr>
         </thead>

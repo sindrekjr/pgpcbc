@@ -1,6 +1,6 @@
 import { Ability } from '../ability';
 
-export interface CharacterBuild {
+export interface Build {
   id: number;
   name: string;
   description?: string;

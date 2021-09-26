@@ -1,4 +1,4 @@
-import { CharacterBuild } from '../models';
+import { Build } from '../models';
 import { builds } from './data';
 
-export const getAllBuilds = (): CharacterBuild[] => [...builds];
+export const getAllBuilds = (): Build[] => [...builds];
