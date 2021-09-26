@@ -4,6 +4,7 @@ import { rem } from 'polished';
 
 const Heading = styled.h1`
   color: #e6e2ad;
+  font-family: sans-serif;
   font-size: ${rem(60)};
   text-align: center;
   -webkit-text-stroke-width: ${rem(2.5)};
