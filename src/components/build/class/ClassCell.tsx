@@ -1,23 +1,22 @@
 import React, { FC } from 'react';
 import { useRecoilValue } from 'recoil';
 
-import { Archetype } from '../../models';
+import { Archetype } from '../../../models';
 import {
   archetypesState,
   classState,
   prestigeClassListSelector,
   primaryClassListSelector,
-} from '../../state';
-import { TableCell } from './TableCell';
-import { TableSelect } from './TableSelect';
+} from '../../../state';
+import { TableCell, TableSelect } from '../table';
 
-export interface ClassTableCellProps {
+export interface ClassCellProps {
   classId: number;
   classCount?: number;
   onChange?: (newClassId: number) => void;
 }
 
-export const ClassTableCell: FC<ClassTableCellProps> = ({ classId, onChange }) => {
+export const ClassCell: FC<ClassCellProps> = ({ classId, onChange }) => {
   const cl = useRecoilValue(classState(classId));
   const base = (cl as Archetype).base || classId;
   const primaryClasses = useRecoilValue(primaryClassListSelector);

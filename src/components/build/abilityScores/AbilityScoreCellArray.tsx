@@ -1,29 +1,27 @@
 import React, { FC } from 'react';
-import { useRecoilValue } from 'recoil';
 
-import { Ability, AbilityScores, Build } from '../../models';
-import { raceState } from '../../state';
-import { AbilityScoreTableCell } from './AbilityScoreTableCell';
+import { Ability, AbilityScores, Build, Race } from '../../../models';
+import { AbilityScoreCell } from './AbilityScoreCell';
 
-export interface AbilityScoreTableCellsProps {
+export interface AbilityScoreCellArrayProps {
   abilityScores: AbilityScores;
   abilityScoreIncreases: Record<number | string, string>;
   level: number;
-  raceId: number;
+  race: Race;
   updateBuild: (data: Partial<Build>) => void;
 }
 
-export const AbilityScoreTableCells: FC<AbilityScoreTableCellsProps> = ({
+export const AbilityScoreCellArray: FC<AbilityScoreCellArrayProps> = ({
   abilityScores,
   abilityScoreIncreases,
   level,
-  raceId,
+  race,
   updateBuild,
 }) => {
   const {
     abilityScoreChoiceIncrease: racialLevelOneIncrease = 0,
     abilityScores: racialAbilityScoreIncreases = {},
-  } = useRecoilValue(raceState(raceId));
+  } = race;
 
   const changeAbilityScoreIncrease = (ability: Ability): void => {
     updateBuild({
@@ -69,7 +67,7 @@ export const AbilityScoreTableCells: FC<AbilityScoreTableCellsProps> = ({
     <>
       {(Object.keys(abilityScores) as Ability[]).map(ability => disabled
         ? (
-          <AbilityScoreTableCell
+          <AbilityScoreCell
             key={ability}
             score={calculateAbilityScore(ability)}
             bonus={hasBonus(ability)}
@@ -77,7 +75,7 @@ export const AbilityScoreTableCells: FC<AbilityScoreTableCellsProps> = ({
             disabled={disabled}
           />
         ) : (
-          <AbilityScoreTableCell
+          <AbilityScoreCell
             key={ability}
             score={calculateAbilityScore(ability)}
             bonus={hasBonus(ability)}

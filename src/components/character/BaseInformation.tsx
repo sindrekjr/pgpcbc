@@ -8,8 +8,8 @@ import {
   getAlignments,
 } from '../../models';
 import { baseRaceListSelector } from '../../state';
-import { Field } from '../common';
 import { BaseAbilityScores } from './BaseAbilityScores';
+import { Field } from './Field';
 
 const InformationSection = styled.section`
   display: flex;

@@ -6,7 +6,7 @@ import { rem } from 'polished';
 import sheet from '../../assets/sheet.jpg';
 import { Character } from '../../models';
 import { characterState } from '../../state';
-import { BuildTable } from '../table';
+import { BuildTable } from '../build';
 import { BaseInformation } from './BaseInformation';
 
 const Sheet = styled.article`

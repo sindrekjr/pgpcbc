@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
 import { rem } from 'polished';
 
-import { TableCell, TableCellProps } from './TableCell';
+import { TableCell, TableCellProps } from '../table';
 
 const bonusColour = '#969d76';
 const penaltyColour = '#ba847c';
@@ -48,12 +48,12 @@ const Button = styled.button`
   cursor: ${({ disabled }) => disabled ? 'default' : 'pointer'};
 `;
 
-export interface AbilityScoreTableCellProps extends ScoreProps {
+export interface AbilityScoreCellProps extends ScoreProps {
   score: number;
   onSelect?: () => void;
 }
 
-export const AbilityScoreTableCell: FC<AbilityScoreTableCellProps> = ({
+export const AbilityScoreCell: FC<AbilityScoreCellProps> = ({
   score,
   bonus,
   penalty,

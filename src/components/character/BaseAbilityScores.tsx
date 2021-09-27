@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { Ability, AbilityScores, Character } from '../../models';
 import { raceState } from '../../state';
-import { Field } from '../common';
+import { Field } from './Field';
 
 const AbilityScoresWrapper = styled.div`
   display: flex;
