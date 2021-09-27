@@ -5,37 +5,37 @@
   "archetypes": [
     {
       "id": 101,
-      "base": 0,
+      "base": 100,
       "name": "Chirurgeon",
       "levels": []
     },
     {
       "id": 102,
-      "base": 0,
+      "base": 100,
       "name": "Grenadier",
       "levels": []
     },
     {
       "id": 103,
-      "base": 0,
+      "base": 100,
       "name": "Incense Synthesizer",
       "levels": []
     },
     {
       "id": 104,
-      "base": 0,
+      "base": 100,
       "name": "Metamorph",
       "levels": []
     },
     {
       "id": 105,
-      "base": 0,
+      "base": 100,
       "name": "Preservationist",
       "levels": []
     },
     {
       "id": 106,
-      "base": 0,
+      "base": 100,
       "name": "Vivisectionist",
       "levels": []
     }
