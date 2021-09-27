@@ -15,7 +15,7 @@ interface ScoreProps extends TableCellProps {
 }
 
 const Score = styled(TableCell)<ScoreProps>`
-  flex-direction: row;
+  line-height: 1;
   text-align: center;
 
   ${({ bonus }) => bonus && css`
@@ -42,7 +42,6 @@ const Score = styled(TableCell)<ScoreProps>`
 `;
 
 const Button = styled.button`
-  display: flex;
   background: transparent;
   border: 0;
   cursor: ${({ disabled }) => disabled ? 'default' : 'pointer'};

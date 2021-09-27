@@ -33,3 +33,11 @@ export const raceState = atomFamily<Race, number>({
     },
   }),
 });
+
+export const racialHeritagesState = atomFamily<Heritage[], number>({
+  key: 'racialHeritages/state',
+  default: selectorFamily<Heritage[], number>({
+    key: 'racialHeritages/selector',
+    get: baseId => ({ get }) => get(raceHeritageListSelector).filter(({ base }) => base === baseId),
+  }),
+});

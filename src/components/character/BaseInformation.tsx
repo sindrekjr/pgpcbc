@@ -1,5 +1,4 @@
 import React, { FC, KeyboardEvent, useState } from 'react';
-import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 
 import {
@@ -7,8 +6,8 @@ import {
   getAlignmentName,
   getAlignments,
 } from '../../models';
-import { baseRaceListSelector } from '../../state';
 import { BaseAbilityScores } from './BaseAbilityScores';
+import { CharacterRace } from './CharacterRace';
 import { Field } from './Field';
 
 const InformationSection = styled.section`
@@ -25,9 +24,10 @@ export const BaseInformation: FC<BaseInformationProps> = ({
   updateCharacter,
 }) => {
   const { abilityScores, alignment, name, race } = character;
-  const races = useRecoilValue(baseRaceListSelector);
 
   const [nameVal, setNameVal] = useState(name);
+
+  const changeRace = (newRaceId: number) => updateCharacter({ race: newRaceId });
 
   const handleKeyDown = ({ key }: KeyboardEvent<HTMLInputElement>, data: Partial<Character>) => {
     if (key === 'Enter') updateCharacter(data);
@@ -46,20 +46,7 @@ export const BaseInformation: FC<BaseInformationProps> = ({
         />
         <label htmlFor="name">Name</label>
       </Field>
-      <Field>
-        <select
-          name="race"
-          value={race}
-          onChange={e => updateCharacter({ race: parseInt(e.target.value ) })}
-        >
-          {races.map(({ id, name }) => (
-            <option key={id} value={id}>
-              {name}
-            </option>
-          ))}
-        </select>
-        <label htmlFor="race">Race</label>
-      </Field>
+      <CharacterRace raceId={race} onChange={changeRace} />
       <Field width={120}>
         <select
           name="alignment"
