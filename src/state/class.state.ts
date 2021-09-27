@@ -1,6 +1,6 @@
 import { atom, atomFamily, selector, selectorFamily } from 'recoil';
 
-import { Archetype, Class, PrestigeClass } from '../models';
+import { Archetype, Class, PrestigeClass, PrimaryClass } from '../models';
 import { getAllClasses } from '../services';
 
 export const classListState = atom<Class[]>({
@@ -11,9 +11,9 @@ export const classListState = atom<Class[]>({
   }),
 });
 
-export const primaryClassListSelector = selector<Class[]>({
+export const primaryClassListSelector = selector<PrimaryClass[]>({
   key: 'primaryClassList/selector',
-  get: ({ get }) => (get(classListState) as Archetype[]).filter(c => !c.base),
+  get: ({ get }) => (get(classListState) as PrimaryClass[]).filter(c => c.archetypes),
 });
 
 export const archetypeListSelector = selector<Archetype[]>({

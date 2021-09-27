@@ -1,5 +1,6 @@
 {
   "id": 2700,
+  "maxLevel": 10,
   "name": "Arcane Trickster",
   "levels": [],
   "prerequisites": []

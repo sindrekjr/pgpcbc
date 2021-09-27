@@ -1,5 +1,6 @@
 {
   "id": 2800,
+  "maxLevel": 10,
   "name": "Assassin",
   "levels": [],
   "prerequisites": []

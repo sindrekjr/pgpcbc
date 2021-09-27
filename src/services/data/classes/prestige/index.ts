@@ -1,3 +1,4 @@
+import { PrestigeClass } from '../../../../models';
 import aldoriSwordlord from './aldoriSwordlord.class.json';
 import arcaneTrickster from './arcaneTrickster.class.json';
 import assassin from './assassin.class.json';
@@ -12,7 +13,7 @@ import stalwartDefender from './stalwartDefender.class.json';
 import studentofWar from './studentofWar.class.json';
 import winterWitch from './winterWitch.class.json';
 
-export const prestigeClasses = [
+export const prestigeClasses: PrestigeClass[] = [
   aldoriSwordlord,
   arcaneTrickster,
   assassin,

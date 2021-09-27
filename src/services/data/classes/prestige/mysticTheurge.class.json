@@ -1,5 +1,6 @@
 {
   "id": 3500,
+  "maxLevel": 10,
   "name": "Mystic Theurge",
   "levels": [],
   "prerequisites": []

@@ -1,5 +1,6 @@
 {
   "id": 3400,
+  "maxLevel": 10,
   "name": "Loremaster",
   "levels": [],
   "prerequisites": []

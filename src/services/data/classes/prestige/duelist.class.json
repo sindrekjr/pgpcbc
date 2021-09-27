@@ -1,5 +1,6 @@
 {
   "id": 3000,
+  "maxLevel": 10,
   "name": "Duelist",
   "levels": [],
   "prerequisites": []

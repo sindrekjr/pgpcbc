@@ -1,5 +1,6 @@
 {
   "id": 3600,
+  "maxLevel": 10,
   "name": "Stalwart Defender",
   "levels": [],
   "prerequisites": []

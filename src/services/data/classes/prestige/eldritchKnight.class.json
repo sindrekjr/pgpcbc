@@ -1,5 +1,6 @@
 {
   "id": 3100,
+  "maxLevel": 10,
   "name": "Eldritch Knight",
   "levels": [],
   "prerequisites": []
