@@ -78,11 +78,12 @@ export const BuildTable: FC<BuildTableProps> = ({ buildId, character }) => {
         ) => (
           <LevelRow
             key={level}
-            abilityScores={abilityScores}
-            classId={classId}
-            build={build}
-            level={parseInt(level)}
             race={race}
+            level={parseInt(level)}
+            classId={classId}
+            abilityScores={abilityScores}
+            abilityScoreIncreases={abilityScoreIncreases}
+            feats={feats[level]}
             updateBuild={updateBuild}
           />
         ))}

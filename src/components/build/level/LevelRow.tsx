@@ -13,23 +13,32 @@ const LevelCell = styled(TableCell)`
 `;
 
 export interface LevelRowProps {
-  abilityScores: AbilityScores;
-  classId: number;
-  build: Build;
-  level: number;
   race: Race;
+  level: number;
+  classId: number;
+  abilityScores: AbilityScores;
+  abilityScoreIncreases: Record<number | string, string>;
+  feats?: {
+    general?: string;
+    bonus1?: string;
+    bonus2?: string;
+  };
   updateBuild: (data: Partial<Build>) => void;
 }
 
 export const LevelRow: FC<LevelRowProps> = ({
-  abilityScores,
-  classId,
-  build,
-  level,
   race,
+  level,
+  classId,
+  abilityScores,
+  abilityScoreIncreases,
+  feats: {
+    general,
+    bonus1,
+    bonus2,
+  } = {},
   updateBuild,
 }) => {
-  const { abilityScoreIncreases, feats } = build;
 
   const changeClass = (newClassId: number) => updateBuild({ classes: { [level]: newClassId }});
 
@@ -46,18 +55,30 @@ export const LevelRow: FC<LevelRowProps> = ({
       />
       <TableCell disabled={level % 2 === 0}>
         {level % 2 !== 0 && (
-          <TableSelect name="feat">
+          <TableSelect name="generalFeat">
             <option>
-              {feats[level] && feats[level].general}
+              {general}
             </option>
           </TableSelect>
         )}
       </TableCell>
-      <TableCell>
-        {feats[level] && feats[level].bonus1}
+      <TableCell disabled={!bonus1}>
+        {!!bonus1 && (
+          <TableSelect name="bonusFeat1">
+            <option>
+              {bonus1}
+            </option>
+          </TableSelect>
+        )}
       </TableCell>
-      <TableCell>
-        {feats[level] && feats[level].bonus2}
+      <TableCell disabled={!bonus2}>
+        {!!bonus2 && (
+          <TableSelect name="bonusFeat2">
+            <option>
+              {bonus2}
+            </option>
+          </TableSelect>
+        )}
       </TableCell>
       <TableCell></TableCell>
     </TableRow>
