@@ -15,8 +15,8 @@ interface ScoreProps extends TableCellProps {
 }
 
 const Score = styled(TableCell)<ScoreProps>`
+  flex-direction: row;
   text-align: center;
-  cursor: ${({ disabled }) => disabled ? 'default' : 'pointer'};
 
   ${({ bonus }) => bonus && css`
     background: ${bonusColour};
@@ -41,6 +41,13 @@ const Score = styled(TableCell)<ScoreProps>`
   `}
 `;
 
+const Button = styled.button`
+  display: flex;
+  background: transparent;
+  border: 0;
+  cursor: ${({ disabled }) => disabled ? 'default' : 'pointer'};
+`;
+
 export interface AbilityScoreTableCellProps extends ScoreProps {
   score: number;
   onSelect?: () => void;
@@ -59,9 +66,14 @@ export const AbilityScoreTableCell: FC<AbilityScoreTableCellProps> = ({
     penalty={penalty}
     disabled={disabled}
     selected={selected}
-    onClick={() => onSelect && onSelect()}
     width={20}
   >
-    {score}
+    <Button
+      disabled={disabled}
+      onClick={() => onSelect && onSelect()}
+      tabIndex={disabled ? -1 : 0}
+    >
+      {score}
+    </Button>
   </Score>
 );
