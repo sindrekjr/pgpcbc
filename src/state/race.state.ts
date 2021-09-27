@@ -26,8 +26,19 @@ export const raceState = atomFamily<Race, number>({
   default: selectorFamily<Race, number>({
     key: 'race/selector',
     get: identifier => ({ get }) => {
-      const race = get(raceListState).find(({ id }) => id === identifier);
-      if (race) return race;
+      const allRaces = get(raceListState);
+      const race = allRaces.find(({ id }) => id === identifier);
+
+      if (race) {
+        const base = (race as Heritage).base;
+        if (!base) return race;
+
+        const baseRace = allRaces.find(({ id }) => id === base);
+        return {
+          ...baseRace,
+          ...race,
+        };
+      }
 
       throw new Error(`No race found with id ${identifier}.`);
     },
