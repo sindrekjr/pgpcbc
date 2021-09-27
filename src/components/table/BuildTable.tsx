@@ -52,6 +52,7 @@ export const BuildTable: FC<BuildTableProps> = ({ buildId, character }) => {
           <tr>
             <th />
             <th>Class</th>
+            <th>Archetype</th>
             <th colSpan={Object.keys(abilityScores).length} />
             <th>Feats (general)</th>
             <th colSpan={2}>Feats (bonus)</th>
@@ -60,7 +61,7 @@ export const BuildTable: FC<BuildTableProps> = ({ buildId, character }) => {
         </thead>
         <tbody>
           {(Object.entries(classes) as unknown as [string, number][]).map(([level, classId]) => (
-            <TableRow key={`${classId}-${level}`}>
+            <TableRow key={level}>
               <LevelCell>{level}</LevelCell>
               <ClassTableCell
                 classId={classId}
