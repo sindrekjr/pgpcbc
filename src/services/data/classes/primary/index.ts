@@ -26,6 +26,16 @@ import warpriest from './warpriest.class.json';
 import witch from './witch.class.json';
 import wizard from './wizard.class.json';
 
+const getPrimaryClass = (
+  data: {
+    primary: Class,
+    archetypes: Partial<Archetype>[],
+  },
+): PrimaryClass => ({
+  ...data.primary,
+  archetypes: data.archetypes.map(({ id }) => id as number),
+});
+
 const mergeClassArchetypes = (
   primary: Class,
   archetypes: Partial<Archetype>[],
@@ -40,31 +50,31 @@ const mergeClassArchetypes = (
 );
 
 export const primaryClasses: PrimaryClass[] = [
-  alchemist.primary,
-  arcanist.primary,
-  barbarian.primary,
-  bard.primary,
-  bloodrager.primary,
-  cavalier.primary,
-  cleric.primary,
-  druid.primary,
-  fighter.primary,
-  hunter.primary,
-  inquisitor.primary,
-  kineticist.primary,
-  magus.primary,
-  monk.primary,
-  oracle.primary,
-  paladin.primary,
-  ranger.primary,
-  rogue.primary,
-  shaman.primary,
-  skald.primary,
-  slayer.primary,
-  sorcerer.primary,
-  warpriest.primary,
-  witch.primary,
-  wizard.primary,
+  getPrimaryClass(alchemist),
+  getPrimaryClass(arcanist),
+  getPrimaryClass(barbarian),
+  getPrimaryClass(bard),
+  getPrimaryClass(bloodrager),
+  getPrimaryClass(cavalier),
+  getPrimaryClass(cleric),
+  getPrimaryClass(druid),
+  getPrimaryClass(fighter),
+  getPrimaryClass(hunter),
+  getPrimaryClass(inquisitor),
+  getPrimaryClass(kineticist),
+  getPrimaryClass(magus),
+  getPrimaryClass(monk),
+  getPrimaryClass(oracle),
+  getPrimaryClass(paladin),
+  getPrimaryClass(ranger),
+  getPrimaryClass(rogue),
+  getPrimaryClass(shaman),
+  getPrimaryClass(skald),
+  getPrimaryClass(slayer),
+  getPrimaryClass(sorcerer),
+  getPrimaryClass(warpriest),
+  getPrimaryClass(witch),
+  getPrimaryClass(wizard),
 ];
 
 export const archetypes: Archetype[] = [
