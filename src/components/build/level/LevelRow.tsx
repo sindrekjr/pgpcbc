@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useCallback } from 'react';
 import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 import { rem } from 'polished';
@@ -44,7 +44,9 @@ export const LevelRow: FC<LevelRowProps> = ({
   updateBuild,
 }) => {
   const currentClass = useRecoilValue(classState(classId));
-  const changeClass = (newClassId: number) => updateBuild({ classes: { [level]: newClassId }});
+  const changeClass = useCallback((newClassId: number) => (
+    updateBuild({ classes: { [level]: newClassId }})
+  ), [level]);
 
   return (
     <TableRow>

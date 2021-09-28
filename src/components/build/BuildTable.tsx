@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useCallback } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 
@@ -34,7 +34,7 @@ export const BuildTable: FC<BuildTableProps> = ({ buildId, character }) => {
     skills,
   } = build;
 
-  const updateBuild = (data: Partial<Build>) => {
+  const updateBuild = useCallback((data: Partial<Build>) => {
     console.log('Updating build...', data);
     setBuild({
       ...build,
@@ -56,7 +56,20 @@ export const BuildTable: FC<BuildTableProps> = ({ buildId, character }) => {
         ...data.skills,
       },
     });
-  };
+  }, [build, setBuild]);
+
+  const getClassLevelAtLevel = useCallback((classId: number, level: number) => (
+    Object.values(classes).slice(0, level).filter(id => id === classId).length
+  ), [classes]);
+
+  const getAbilityScoreIncreasesAtLevel = useCallback((level: string) => (
+    Object.keys(abilityScoreIncreases).filter(key => (
+      key <= level
+    )).reduce((increases, iLevel) => ({
+      ...increases,
+      [iLevel]: abilityScoreIncreases[iLevel],
+    }), {})
+  ), [abilityScoreIncreases]);
 
   return (
     <Table>
@@ -80,11 +93,9 @@ export const BuildTable: FC<BuildTableProps> = ({ buildId, character }) => {
             race={race}
             level={parseInt(level)}
             classId={classId}
-            classLevel={(
-              Object.values(classes).slice(0, parseInt(level)).filter(id => id === classId).length
-            )}
+            classLevel={getClassLevelAtLevel(classId, parseInt(level))}
             abilityScores={abilityScores}
-            abilityScoreIncreases={abilityScoreIncreases}
+            abilityScoreIncreases={getAbilityScoreIncreasesAtLevel(level)}
             feats={feats[level]}
             updateBuild={updateBuild}
           />

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useCallback } from 'react';
 import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 import { rem } from 'polished';
@@ -30,13 +30,13 @@ export const CharacterSheet: FC<CharacterSheetProps> = ({ id }) => {
   const [character, setCharacter] = useRecoilState(characterState(id));
   const { builds } = character;
 
-  const updateCharacter = (data: Partial<Character>) => {
+  const updateCharacter = useCallback((data: Partial<Character>) => {
     console.log('Updating character...', data);
     setCharacter({
       ...character,
       ...data,
     });
-  };
+  }, [character, setCharacter]);
 
   if (!builds || !builds.length) return null;
 

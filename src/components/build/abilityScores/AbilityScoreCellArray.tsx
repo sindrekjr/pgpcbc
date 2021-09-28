@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useCallback, useMemo } from 'react';
 
 import { Ability, AbilityScores, Build, Race } from '../../../models';
 import { AbilityScoreCell } from './AbilityScoreCell';
@@ -23,45 +23,46 @@ export const AbilityScoreCellArray: FC<AbilityScoreCellArrayProps> = ({
     abilityScores: racialAbilityScoreIncreases = {},
   } = race;
 
-  const changeAbilityScoreIncrease = (ability: Ability): void => {
+  const changeAbilityScoreIncrease = useCallback((ability: Ability): void => {
     updateBuild({
       abilityScoreIncreases: {
         ...abilityScoreIncreases,
         [level]: ability,
       },
     });
-  };
+  }, [abilityScoreIncreases, level]);
 
-  const calculateAbilityScore = (ability: Ability): number => {
+  const calculateAbilityScore = useCallback((ability: Ability): number => {
+    const racialAbilityIncrease = racialAbilityScoreIncreases[ability] || 0;
     const levelOneIncrease = abilityScoreIncreases[1] === ability && racialLevelOneIncrease || 0;
     const regularIncreases = [4, 8, 12, 16, 20].filter(n => n <= level).filter(key => (
       abilityScoreIncreases[key.toString()] === ability
     )).length;
 
-    const racialAbilityIncrease = racialAbilityScoreIncreases[ability] || 0;
-
     return abilityScores[ability] + racialAbilityIncrease + levelOneIncrease + regularIncreases;
-  };
+  }, [abilityScores, abilityScoreIncreases, racialLevelOneIncrease, racialAbilityScoreIncreases]);
 
-  const hasBonus = (ability: Ability): boolean => {
+  const hasBonus = useCallback((ability: Ability): boolean => {
     if (level === 1) {
       const racial = racialAbilityScoreIncreases[ability];
       if (racial && racial > 0) return true;
     }
 
     return false;
-  };
+  }, [racialAbilityScoreIncreases]);
 
-  const hasPenalty = (ability: Ability): boolean => {
+  const hasPenalty = useCallback((ability: Ability): boolean => {
     if (level === 1) {
       const racial = racialAbilityScoreIncreases[ability];
       if (racial && racial < 0) return true;
     }
 
     return false;
-  };
+  }, [racialAbilityScoreIncreases]);
 
-  const disabled = level % 4 !== 0 && !(!!racialLevelOneIncrease && level === 1);
+  const disabled = useMemo(() => (
+    level % 4 !== 0 && !(!!racialLevelOneIncrease && level === 1)
+  ), [level, racialLevelOneIncrease]);
 
   return (
     <>

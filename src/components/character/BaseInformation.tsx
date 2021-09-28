@@ -1,4 +1,4 @@
-import React, { FC, KeyboardEvent, useState } from 'react';
+import React, { FC, KeyboardEvent, useCallback, useState } from 'react';
 import styled from 'styled-components';
 
 import {
@@ -27,11 +27,16 @@ export const BaseInformation: FC<BaseInformationProps> = ({
 
   const [nameVal, setNameVal] = useState(name);
 
-  const changeRace = (newRaceId: number) => updateCharacter({ race: newRaceId });
+  const changeRace = useCallback((newRaceId: number) => (
+    updateCharacter({ race: newRaceId })
+  ), [updateCharacter]);
 
-  const handleKeyDown = ({ key }: KeyboardEvent<HTMLInputElement>, data: Partial<Character>) => {
+  const handleKeyDown = useCallback((
+    { key }: KeyboardEvent<HTMLInputElement>,
+    data: Partial<Character>,
+  ) => {
     if (key === 'Enter') updateCharacter(data);
-  };
+  }, [updateCharacter]);
 
   return (
     <InformationSection>

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useCallback } from 'react';
 import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 
@@ -25,24 +25,24 @@ export const BaseAbilityScores: FC<BaseAbilityScoresProps> = ({
     abilityScores: racialAbilityScoreIncreases,
   } = useRecoilValue(raceState(raceId));
 
-  const onChange = (ability: Ability, newValue: number) => {
+  const onChange = useCallback((ability: Ability, newValue: number) => {
     updateCharacter({
       abilityScores: {
         ...abilityScores,
         [ability]: newValue,
       },
     });
-  };
+  }, [abilityScores, updateCharacter]);
 
-  const getModForAbility = (ability: Ability): number => (
+  const getModForAbility = useCallback((ability: Ability): number => (
     racialAbilityScoreIncreases ? racialAbilityScoreIncreases[ability] || 0 : 0
-  );
+  ), [racialAbilityScoreIncreases]);
 
-  const getIncreaseAsString = (increase: number) => (
+  const getIncreaseAsString = useCallback((increase: number) => (
     increase === 0
       ? ''
       : increase > 0 ? `+${increase}` : increase
-  );
+  ), []);
 
   return (
     <AbilityScoresWrapper>
