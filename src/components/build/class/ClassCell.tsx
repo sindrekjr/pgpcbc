@@ -1,24 +1,23 @@
 import React, { FC } from 'react';
 import { useRecoilValue } from 'recoil';
 
-import { Archetype } from '../../../models';
+import { Archetype, Class } from '../../../models';
 import {
   archetypesState,
-  classState,
   prestigeClassListSelector,
   primaryClassListSelector,
 } from '../../../state';
 import { TableCell, TableSelect } from '../table';
 
 export interface ClassCellProps {
-  classId: number;
-  classCount?: number;
+  cl: Class;
+  classLevel: number;
   onChange?: (newClassId: number) => void;
 }
 
-export const ClassCell: FC<ClassCellProps> = ({ classId, onChange }) => {
-  const cl = useRecoilValue(classState(classId));
-  const base = (cl as Archetype).base || classId;
+export const ClassCell: FC<ClassCellProps> = ({ cl, onChange }) => {
+  const { id } = cl;
+  const base = (cl as Archetype).base || id;
   const primaryClasses = useRecoilValue(primaryClassListSelector);
   const archetypes = useRecoilValue(archetypesState(base));
   const prestigeClasses = useRecoilValue(prestigeClassListSelector);
@@ -30,7 +29,7 @@ export const ClassCell: FC<ClassCellProps> = ({ classId, onChange }) => {
         <TableSelect
           name="class"
           value={base}
-          onChange={e => onChange && onChange(parseInt(e.target.value) || classId)}
+          onChange={e => onChange && onChange(parseInt(e.target.value) || id)}
         >
           <option />
           {[...primaryClasses, ...prestigeClasses].map(({ id, name }) => (
@@ -44,7 +43,7 @@ export const ClassCell: FC<ClassCellProps> = ({ classId, onChange }) => {
         {hasArchetypes && (
           <TableSelect
             name="archetype"
-            value={classId}
+            value={id}
             onChange={({ target: { value }}) => onChange && onChange(parseInt(value) || base)}
           >
             <option />

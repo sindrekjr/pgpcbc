@@ -1,8 +1,10 @@
 import React, { FC } from 'react';
+import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 import { rem } from 'polished';
 
 import { AbilityScores, Build, Race } from '../../../models';
+import { classState } from '../../../state';
 import { AbilityScoreCellArray } from '../abilityScores';
 import { ClassCell } from '../class';
 import { TableCell, TableRow, TableSelect } from '../table';
@@ -16,6 +18,7 @@ export interface LevelRowProps {
   race: Race;
   level: number;
   classId: number;
+  classLevel: number;
   abilityScores: AbilityScores;
   abilityScoreIncreases: Record<number | string, string>;
   feats?: {
@@ -30,6 +33,7 @@ export const LevelRow: FC<LevelRowProps> = ({
   race,
   level,
   classId,
+  classLevel,
   abilityScores,
   abilityScoreIncreases,
   feats: {
@@ -39,13 +43,13 @@ export const LevelRow: FC<LevelRowProps> = ({
   } = {},
   updateBuild,
 }) => {
-
+  const currentClass = useRecoilValue(classState(classId));
   const changeClass = (newClassId: number) => updateBuild({ classes: { [level]: newClassId }});
 
   return (
     <TableRow>
       <LevelCell>{level}</LevelCell>
-      <ClassCell classId={classId} onChange={changeClass} />
+      <ClassCell cl={currentClass} classLevel={classLevel} onChange={changeClass} />
       <AbilityScoreCellArray
         abilityScores={abilityScores}
         abilityScoreIncreases={abilityScoreIncreases}

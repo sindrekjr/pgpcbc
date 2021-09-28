@@ -2,9 +2,8 @@ import React, { FC } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 
-import { buildState } from '../../state/build.state';
 import { Build, Character } from '../../models';
-import { raceState } from '../../state';
+import { buildState, raceState } from '../../state';
 import { LevelRow } from './level';
 
 const Table = styled.table`
@@ -81,6 +80,9 @@ export const BuildTable: FC<BuildTableProps> = ({ buildId, character }) => {
             race={race}
             level={parseInt(level)}
             classId={classId}
+            classLevel={(
+              Object.values(classes).slice(0, parseInt(level)).filter(id => id === classId).length
+            )}
             abilityScores={abilityScores}
             abilityScoreIncreases={abilityScoreIncreases}
             feats={feats[level]}
