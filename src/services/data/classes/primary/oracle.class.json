@@ -1,7 +1,16 @@
 {
-  "id": 1500,
-  "name": "Oracle",
-  "levels": [],
+  "primary": {
+    "id": 1500,
+    "name": "Oracle",
+    "levels": [],
+    "progression": {
+      "baseAttackBonus": 0.75,
+      "fortitude": 0,
+      "reflex": 0,
+      "will": 1
+    },
+    "archetypes": [1501, 1502, 1503, 1504, 1505, 1506, 1507]
+  },
   "archetypes": [
     {
       "id": 1501,

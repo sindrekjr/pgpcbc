@@ -1,7 +1,16 @@
 {
-  "id": 400,
-  "name": "Bard",
-  "levels": [],
+  "primary": {
+    "id": 400,
+    "name": "Bard",
+    "levels": [],
+    "progression": {
+      "baseAttackBonus": 0.75,
+      "fortitude": 0,
+      "reflex": 1,
+      "will": 1
+    },
+    "archetypes": [401, 402, 403, 404, 405, 406]
+  },
   "archetypes": [
     {
       "id": 401,

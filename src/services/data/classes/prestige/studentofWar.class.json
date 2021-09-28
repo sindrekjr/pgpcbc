@@ -3,5 +3,11 @@
   "maxLevel": 10,
   "name": "Student of War",
   "levels": [],
+  "progression": {
+    "baseAttackBonus": 1,
+    "fortitude": 3,
+    "reflex": 3,
+    "will": 4
+  },
   "prerequisites": []
 }

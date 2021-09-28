@@ -1,7 +1,16 @@
 {
-  "id": 2200,
-  "name": "Sorcerer",
-  "levels": [],
+  "primary": {
+    "id": 2200,
+    "name": "Sorcerer",
+    "levels": [],
+    "progression": {
+      "baseAttackBonus": 0.5,
+      "fortitude": 0,
+      "reflex": 0,
+      "will": 1
+    },
+    "archetypes": [2201, 2202, 2203, 2204, 2205, 2206, 2207]
+  },
   "archetypes": [
     {
       "id": 2201,

@@ -3,5 +3,11 @@
   "maxLevel": 10,
   "name": "Hellknight Signifier",
   "levels": [],
+  "progression": {
+    "baseAttackBonus": 0.75,
+    "fortitude": 3,
+    "reflex": 3,
+    "will": 4
+  },
   "prerequisites": []
 }

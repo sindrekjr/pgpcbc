@@ -1,7 +1,16 @@
 {
-  "id": 2400,
-  "name": "Witch",
-  "levels": [],
+  "primary": {
+    "id": 2400,
+    "name": "Witch",
+    "levels": [],
+    "progression": {
+      "baseAttackBonus": 0.5,
+      "fortitude": 0,
+      "reflex": 0,
+      "will": 1
+    },
+    "archetypes": [2401, 2402, 2403, 2404, 2405, 2406]
+  },
   "archetypes": [
     {
       "id": 2401,

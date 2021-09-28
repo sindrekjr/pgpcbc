@@ -3,5 +3,11 @@
   "maxLevel": 10,
   "name": "Hellknight",
   "levels": [],
+  "progression": {
+    "baseAttackBonus": 1,
+    "fortitude": 4,
+    "reflex": 3,
+    "will": 3
+  },
   "prerequisites": []
 }

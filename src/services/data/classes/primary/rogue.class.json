@@ -1,7 +1,16 @@
 {
-  "id": 1800,
-  "name": "Rogue",
-  "levels": [],
+  "primary": {
+    "id": 1800,
+    "name": "Rogue",
+    "levels": [],
+    "progression": {
+      "baseAttackBonus": 0.75,
+      "fortitude": 0,
+      "reflex": 1,
+      "will": 0
+    },
+    "archetypes": [1801, 1802, 1803, 1804, 1805, 1806, 1807]
+  },
   "archetypes": [
     {
       "id": 1801,

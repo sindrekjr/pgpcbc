@@ -1,7 +1,16 @@
 {
-  "id": 500,
-  "name": "Bloodrager",
-  "levels": [],
+  "primary": {
+    "id": 500,
+    "name": "Bloodrager",
+    "levels": [],
+    "progression": {
+      "baseAttackBonus": 1,
+      "fortitude": 1,
+      "reflex": 0,
+      "will": 0
+    },
+    "archetypes": [501, 502, 503, 504, 505, 506, 507]
+  },
   "archetypes": [
     {
       "id": 501,

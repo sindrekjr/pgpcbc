@@ -1,7 +1,16 @@
 {
-  "id": 900,
-  "name": "Fighter",
-  "levels": [],
+  "primary": {
+    "id": 900,
+    "name": "Fighter",
+    "levels": [],
+    "progression": {
+      "baseAttackBonus": 1,
+      "fortitude": 1,
+      "reflex": 0,
+      "will": 0
+    },
+    "archetypes": [901, 902, 903, 904, 905, 906]
+  },
   "archetypes": [
     {
       "id": 901,

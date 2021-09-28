@@ -1,7 +1,16 @@
 {
-  "id": 1900,
-  "name": "Shaman",
-  "levels": [],
+  "primary": {
+    "id": 1900,
+    "name": "Shaman",
+    "levels": [],
+    "progression": {
+      "baseAttackBonus": 0.75,
+      "fortitude": 0,
+      "reflex": 0,
+      "will": 1
+    },
+    "archetypes": [1901, 1902, 1903, 1904, 1905, 1906, 1907]
+  },
   "archetypes": [
     {
       "id": 1901,

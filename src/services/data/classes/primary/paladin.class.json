@@ -1,7 +1,16 @@
 {
-  "id": 1600,
-  "name": "Paladin",
-  "levels": [],
+  "primary": {
+    "id": 1600,
+    "name": "Paladin",
+    "levels": [],
+    "progression": {
+      "baseAttackBonus": 1,
+      "fortitude": 1,
+      "reflex": 0,
+      "will": 1
+    },
+    "archetypes": [1601, 1602, 1603, 1604, 1605, 1606, 1607]
+  },
   "archetypes": [
     {
       "id": 1601,

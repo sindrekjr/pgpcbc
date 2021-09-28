@@ -1,7 +1,16 @@
 {
-  "id": 1400,
-  "name": "Monk",
-  "levels": [],
+  "primary": {
+    "id": 1400,
+    "name": "Monk",
+    "levels": [],
+    "progression": {
+      "baseAttackBonus": 1,
+      "fortitude": 1,
+      "reflex": 1,
+      "will": 0
+    },
+    "archetypes": [1401, 1402, 1403, 1404, 1405, 1406, 1407]
+  },
   "archetypes": [
     {
       "id": 1401,

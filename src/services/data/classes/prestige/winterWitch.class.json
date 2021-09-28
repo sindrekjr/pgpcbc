@@ -3,5 +3,11 @@
   "maxLevel": 10,
   "name": "Winter Witch",
   "levels": [],
+  "progression": {
+    "baseAttackBonus": 0.5,
+    "fortitude": 3,
+    "reflex": 3,
+    "will": 4
+  },
   "prerequisites": []
 }

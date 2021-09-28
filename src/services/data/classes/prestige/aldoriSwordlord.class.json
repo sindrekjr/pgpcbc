@@ -3,5 +3,11 @@
   "maxLevel": 10,
   "name": "Aldori Swordlord",
   "levels": [],
+  "progression": {
+    "baseAttackBonus": 1,
+    "fortitude": 3,
+    "reflex": 4,
+    "will": 3
+  },
   "prerequisites": []
 }

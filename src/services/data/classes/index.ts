@@ -1,9 +1,9 @@
 import { Class } from '../../../models';
 
-import { primaryClasses } from './primary';
+import { archetypes, primaryClasses } from './primary';
 import { prestigeClasses } from './prestige';
 
 export const classes: Class[] = [
-  ...primaryClasses,
+  ...primaryClasses, ...archetypes,
   ...prestigeClasses,
 ];

@@ -1,7 +1,16 @@
 {
-  "id": 2500,
-  "name": "Wizard",
-  "levels": [],
+  "primary": {
+    "id": 2500,
+    "name": "Wizard",
+    "levels": [],
+    "progression": {
+      "baseAttackBonus": 0.5,
+      "fortitude": 0,
+      "reflex": 0,
+      "will": 1
+    },
+    "archetypes": [2501, 2502, 2503, 2504, 2505, 2506, 2507]
+  },
   "archetypes": [
     {
       "id": 2501,

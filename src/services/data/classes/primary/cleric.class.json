@@ -1,7 +1,16 @@
 {
-  "id": 700,
-  "name": "Cleric",
-  "levels": [],
+  "primary": {
+    "id": 700,
+    "name": "Cleric",
+    "levels": [],
+    "progression": {
+      "baseAttackBonus": 0.75,
+      "fortitude": 1,
+      "reflex": 0,
+      "will": 1
+    },
+    "archetypes": [701, 702, 703, 704, 705, 706]
+  },
   "archetypes": [
     {
       "id": 701,

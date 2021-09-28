@@ -1,7 +1,16 @@
 {
-  "id": 100,
-  "name": "Alchemist",
-  "levels": [],
+  "primary": {
+    "id": 100,
+    "name": "Alchemist",
+    "levels": [],
+    "progression": {
+      "baseAttackBonus": 0.75,
+      "fortitude": 1,
+      "reflex": 1,
+      "will": 0
+    },
+    "archetypes": [101, 102, 103, 104, 105, 106]
+  },
   "archetypes": [
     {
       "id": 101,

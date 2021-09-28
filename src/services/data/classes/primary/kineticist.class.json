@@ -1,7 +1,16 @@
 {
-  "id": 1200,
-  "name": "Kineticist",
-  "levels": [],
+  "primary": {
+    "id": 1200,
+    "name": "Kineticist",
+    "levels": [],
+    "progression": {
+      "baseAttackBonus": 0.75,
+      "fortitude": 1,
+      "reflex": 1,
+      "will": 0
+    },
+    "archetypes": [1201, 1202, 1203, 1204, 1205, 1206]
+  },
   "archetypes": [
     {
       "id": 1201,

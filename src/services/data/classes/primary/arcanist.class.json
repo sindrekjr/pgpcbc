@@ -1,7 +1,16 @@
 {
-  "id": 200,
-  "name": "Arcanist",
-  "levels": [],
+  "primary": {
+    "id": 200,
+    "name": "Arcanist",
+    "levels": [],
+    "progression": {
+      "baseAttackBonus": 0.5,
+      "fortitude": 0,
+      "reflex": 0,
+      "will": 1
+    },
+    "archetypes": [201, 202, 203, 204, 205, 206]
+  },
   "archetypes": [
     {
       "id": 201,

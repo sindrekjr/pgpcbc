@@ -1,7 +1,16 @@
 {
-  "id": 600,
-  "name": "Cavalier",
-  "levels": [],
+  "primary": {
+    "id": 600,
+    "name": "Cavalier",
+    "levels": [],
+    "progression": {
+      "baseAttackBonus": 1,
+      "fortitude": 1,
+      "reflex": 0,
+      "will": 0
+    },
+    "archetypes": [601, 602, 603, 604, 605, 606, 607]
+  },
   "archetypes": [
     {
       "id": 601,

@@ -1,7 +1,16 @@
 {
-  "id": 1700,
-  "name": "Ranger",
-  "levels": [],
+  "primary": {
+    "id": 1700,
+    "name": "Ranger",
+    "levels": [],
+    "progression": {
+      "baseAttackBonus": 1,
+      "fortitude": 1,
+      "reflex": 1,
+      "will": 0
+    },
+    "archetypes": [1701, 1702, 1703, 1704, 1705, 1706]
+  },
   "archetypes": [
     {
       "id": 1701,
