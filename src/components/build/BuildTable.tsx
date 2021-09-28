@@ -58,8 +58,8 @@ export const BuildTable: FC<BuildTableProps> = ({ buildId, character }) => {
     });
   }, [build, setBuild]);
 
-  const getClassLevelAtLevel = useCallback((classId: number, level: number) => (
-    Object.values(classes).slice(0, level).filter(id => id === classId).length
+  const getClassesAtLevel = useCallback((level: number) => (
+    Object.values(classes).slice(0, level)
   ), [classes]);
 
   const getAbilityScoreIncreasesAtLevel = useCallback((level: string) => (
@@ -81,6 +81,10 @@ export const BuildTable: FC<BuildTableProps> = ({ buildId, character }) => {
           <th colSpan={Object.keys(abilityScores).length} />
           <th>Feats (general)</th>
           <th colSpan={2}>Feats (bonus)</th>
+          <th>BAB</th>
+          <th>FORT</th>
+          <th>REF</th>
+          <th>WILL</th>
           <th>Traits</th>
         </tr>
       </thead>
@@ -93,7 +97,7 @@ export const BuildTable: FC<BuildTableProps> = ({ buildId, character }) => {
             race={race}
             level={parseInt(level)}
             classId={classId}
-            classLevel={getClassLevelAtLevel(classId, parseInt(level))}
+            classes={getClassesAtLevel(parseInt(level))}
             abilityScores={abilityScores}
             abilityScoreIncreases={getAbilityScoreIncreasesAtLevel(level)}
             feats={feats[level]}

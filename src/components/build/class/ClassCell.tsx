@@ -25,7 +25,7 @@ export const ClassCell: FC<ClassCellProps> = ({ cl, onChange }) => {
 
   return (
     <>
-      <TableCell>
+      <TableCell width={120}>
         <TableSelect
           name="class"
           value={base}
@@ -39,7 +39,7 @@ export const ClassCell: FC<ClassCellProps> = ({ cl, onChange }) => {
           ))}
         </TableSelect>
       </TableCell>
-      <TableCell disabled={!hasArchetypes}>
+      <TableCell disabled={!hasArchetypes} width={200}>
         {hasArchetypes && (
           <TableSelect
             name="archetype"

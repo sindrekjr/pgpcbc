@@ -1,4 +1,4 @@
-import React, { FC, useCallback } from 'react';
+import React, { FC, useCallback, useMemo } from 'react';
 import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 import { rem } from 'polished';
@@ -8,6 +8,7 @@ import { classState } from '../../../state';
 import { AbilityScoreCellArray } from '../abilityScores';
 import { ClassCell } from '../class';
 import { TableCell, TableRow, TableSelect } from '../table';
+import { StatProgressionArray } from './StatProgressionArray';
 
 const LevelCell = styled(TableCell)`
   text-align: center;
@@ -18,7 +19,7 @@ export interface LevelRowProps {
   race: Race;
   level: number;
   classId: number;
-  classLevel: number;
+  classes: number[];
   abilityScores: AbilityScores;
   abilityScoreIncreases: Record<number | string, string>;
   feats?: {
@@ -33,7 +34,7 @@ export const LevelRow: FC<LevelRowProps> = ({
   race,
   level,
   classId,
-  classLevel,
+  classes,
   abilityScores,
   abilityScoreIncreases,
   feats: {
@@ -48,6 +49,12 @@ export const LevelRow: FC<LevelRowProps> = ({
     updateBuild({ classes: { [level]: newClassId }})
   ), [level]);
 
+  const getClassLevel = useCallback(() => (
+    classes.filter(id => id === classId).length
+  ), [classes, classId]);
+
+  const classLevel = useMemo(() => getClassLevel(), [getClassLevel]);
+
   return (
     <TableRow>
       <LevelCell>{level}</LevelCell>
@@ -59,7 +66,7 @@ export const LevelRow: FC<LevelRowProps> = ({
         race={race}
         updateBuild={updateBuild}
       />
-      <TableCell disabled={level % 2 === 0}>
+      <TableCell disabled={level % 2 === 0} width={200}>
         {level % 2 !== 0 && (
           <TableSelect name="generalFeat">
             <option>
@@ -68,7 +75,7 @@ export const LevelRow: FC<LevelRowProps> = ({
           </TableSelect>
         )}
       </TableCell>
-      <TableCell disabled={!bonus1}>
+      <TableCell disabled={!bonus1} width={200}>
         {!!bonus1 && (
           <TableSelect name="bonusFeat1">
             <option>
@@ -86,6 +93,7 @@ export const LevelRow: FC<LevelRowProps> = ({
           </TableSelect>
         )}
       </TableCell>
+      <StatProgressionArray classIds={classes} />
       <TableCell></TableCell>
     </TableRow>
   );
