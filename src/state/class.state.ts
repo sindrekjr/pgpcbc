@@ -31,19 +31,8 @@ export const classState = atomFamily<Class, number>({
   default: selectorFamily<Class, number>({
     key: 'class/selector',
     get: identifier => ({ get }) => {
-      const allClasses = get(classListState);
-      const cl = allClasses.find(({ id }) => id === identifier);
-
-      if (cl) {
-        const base = (cl as Archetype).base;
-        if (!base) return cl;
-
-        const baseClass = allClasses.find(({ id }) => id === base);
-        return {
-          ...baseClass,
-          ...cl,
-        };
-      }
+      const cl = get(classListState).find(({ id }) => id === identifier);
+      if (cl) return cl;
 
       throw new Error(`No class found with id ${identifier}.`);
     },
