@@ -1,7 +1,7 @@
 {
   "name": "pretty-good-pathfinder-character-build-calculator",
   "homepage": "https://sindrekjr.github.io/pgpcbc/",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
