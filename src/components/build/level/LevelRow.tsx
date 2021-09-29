@@ -45,9 +45,9 @@ export const LevelRow: FC<LevelRowProps> = ({
   updateBuild,
 }) => {
   const currentClass = useRecoilValue(classState(classId));
-  const changeClass = useCallback((newClassId: number) => (
+  const changeClass = (newClassId: number) => (
     updateBuild({ classes: { [level]: newClassId }})
-  ), [level]);
+  );
 
   const getClassLevel = useCallback(() => (
     classes.filter(id => id === classId).length
