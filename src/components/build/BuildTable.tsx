@@ -64,7 +64,7 @@ export const BuildTable: FC<BuildTableProps> = ({ buildId, character }) => {
 
   const getAbilityScoreIncreasesAtLevel = useCallback((level: string) => (
     Object.keys(abilityScoreIncreases).filter(key => (
-      key <= level
+      parseInt(key) <= parseInt(level)
     )).reduce((increases, iLevel) => ({
       ...increases,
       [iLevel]: abilityScoreIncreases[iLevel],
