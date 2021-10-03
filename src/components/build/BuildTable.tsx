@@ -89,7 +89,7 @@ export const BuildTable: FC<BuildTableProps> = ({ buildId, character }) => {
         </tr>
       </thead>
       <tbody>
-        {(Object.entries(classes) as [string, number][]).map((
+        {Object.entries(classes).map((
           [level, classId],
         ) => (
           <LevelRow

@@ -11,6 +11,11 @@ export const buildListState = atom<Build[]>({
   }),
 });
 
+export const selectedBuildState = atom<number>({
+  key: 'selectedBuild/state',
+  default: 0,
+});
+
 export const buildState = atomFamily<Build | undefined, number>({
   key: 'build/state',
   default: selectorFamily<Build | undefined, number>({

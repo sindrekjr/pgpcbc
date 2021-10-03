@@ -5,4 +5,5 @@ export * from './character';
 export * from './class';
 export * from './level';
 export * from './race';
+export * from './savingThrow';
 export * from './trait';

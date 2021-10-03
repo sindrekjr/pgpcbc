@@ -1,11 +1,11 @@
 import React, { FC, useCallback } from 'react';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 import { rem } from 'polished';
 
 import sheet from '../../assets/sheet.jpg';
 import { Character } from '../../models';
-import { characterState } from '../../state';
+import { characterState, selectedBuildState } from '../../state';
 import { BuildTable } from '../build';
 import { BaseInformation } from './BaseInformation';
 
@@ -43,7 +43,7 @@ export const CharacterSheet: FC<CharacterSheetProps> = ({ id }) => {
   return (
     <Sheet>
       <BaseInformation character={character} updateCharacter={updateCharacter} />
-      <BuildTable buildId={builds[0]} character={character} />
+      <BuildTable buildId={useRecoilValue(selectedBuildState)} character={character} />
     </Sheet>
   );
 };

@@ -3,7 +3,7 @@ import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 import { rem } from 'polished';
 
-import { calculateBaseAttackBonus, calculateSavingThrowBonus } from '../../../models';
+import { calculateBaseAttackBonus, calculateSavingThrowBonus, SavingThrow } from '../../../models';
 import { classListState } from '../../../state';
 import { TableCell } from '../table';
 

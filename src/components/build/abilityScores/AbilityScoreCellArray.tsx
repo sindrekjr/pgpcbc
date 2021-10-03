@@ -37,7 +37,7 @@ export const AbilityScoreCellArray: FC<AbilityScoreCellArrayProps> = ({
     const levelOneIncrease = abilityScoreIncreases[1] === ability && racialLevelOneIncrease || 0;
     const regularIncreases = Object.keys(abilityScoreIncreases).filter(key => (
       key != '1' &&
-      abilityScoreIncreases[key.toString()] === ability
+      abilityScoreIncreases[key] === ability
     )).length;
 
     return abilityScores[ability] + racialAbilityIncrease + levelOneIncrease + regularIncreases;
