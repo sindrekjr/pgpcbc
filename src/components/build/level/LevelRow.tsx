@@ -3,7 +3,7 @@ import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 import { rem } from 'polished';
 
-import { AbilityScores, Build, Race } from '../../../models';
+import { Ability, AbilityScores, Build, Race, resolveAbilityScoreModifier } from '../../../models';
 import { classState } from '../../../state';
 import { AbilityScoreCellArray } from '../abilityScores';
 import { ClassCell } from '../class';
@@ -55,15 +55,47 @@ export const LevelRow: FC<LevelRowProps> = ({
 
   const classLevel = useMemo(() => getClassLevel(), [getClassLevel]);
 
+  const {
+    abilityScoreChoiceIncrease: racialLevelOneIncrease,
+    abilityScores: racialAbilityScoreIncreases = {},
+  } = race;
+
+  const calculateAbilityScore = useCallback((ability: Ability): number => {
+    const racialAbilityIncrease = racialAbilityScoreIncreases[ability] || 0;
+    const levelOneIncrease = abilityScoreIncreases[1] === ability && racialLevelOneIncrease || 0;
+    const regularIncreases = Object.keys(abilityScoreIncreases).filter(key => (
+      key != '1' &&
+      abilityScoreIncreases[key] === ability
+    )).length;
+
+    return abilityScores[ability] + racialAbilityIncrease + levelOneIncrease + regularIncreases;
+  }, [abilityScores, abilityScoreIncreases, racialLevelOneIncrease, racialAbilityScoreIncreases]);
+
+  const calculateAbilityScores = useCallback((): AbilityScores => (
+    (Object.keys(abilityScores) as Ability[]).reduce((acc, ability) => ({
+      ...acc,
+      [ability]: calculateAbilityScore(ability),
+    }), {} as AbilityScores)
+  ), [abilityScores, calculateAbilityScore]);
+
+  const calculatedAbilityScores = calculateAbilityScores();
+
+  const savingThrowModifiers = useMemo(() => ({
+    fort: resolveAbilityScoreModifier(calculatedAbilityScores.con),
+    ref: resolveAbilityScoreModifier(calculatedAbilityScores.dex),
+    will: resolveAbilityScoreModifier(calculatedAbilityScores.wis),
+  }), [calculatedAbilityScores]);
+
   return (
     <TableRow>
       <LevelCell>{level}</LevelCell>
       <ClassCell cl={currentClass} classLevel={classLevel} onChange={changeClass} />
       <AbilityScoreCellArray
-        abilityScores={abilityScores}
+        abilityScores={calculatedAbilityScores}
         abilityScoreIncreases={abilityScoreIncreases}
+        bonuses={racialAbilityScoreIncreases}
+        choice={level % 4 !== 0 && !(!!racialLevelOneIncrease && level === 1)}
         level={level}
-        race={race}
         updateBuild={updateBuild}
       />
       <TableCell disabled={level % 2 === 0} width={200}>
@@ -93,7 +125,7 @@ export const LevelRow: FC<LevelRowProps> = ({
           </TableSelect>
         )}
       </TableCell>
-      <StatProgressionArray classIds={classes} />
+      <StatProgressionArray classIds={classes} modifiers={savingThrowModifiers} />
       <TableCell></TableCell>
     </TableRow>
   );

@@ -8,15 +8,17 @@ import { classListState } from '../../../state';
 import { TableCell } from '../table';
 
 const StatCell = styled(TableCell)`
+  border: 0;
   text-align: center;
-  width: ${rem(25)};
+  width: ${rem(21)};
 `;
 
 export interface StatProgressionArrayProps {
   classIds: number[];
+  modifiers: Record<SavingThrow, number>;
 }
 
-export const StatProgressionArray: FC<StatProgressionArrayProps> = ({ classIds }) => {
+export const StatProgressionArray: FC<StatProgressionArrayProps> = ({ classIds, modifiers }) => {
   const uniqueClasses = useRecoilValue(classListState).filter(({ id }) => (
     classIds.includes(id)
   ));
@@ -31,27 +33,25 @@ export const StatProgressionArray: FC<StatProgressionArrayProps> = ({ classIds }
       stats.will += calculateSavingThrowBonus(classLevels, will);
       return stats;
     }, {
+      ...modifiers,
       bab: 0,
-      fort: 0,
-      ref: 0,
-      will: 0,
     })
-  ), [classIds, uniqueClasses]);
+  ), [classIds, modifiers, uniqueClasses]);
 
   const { bab, fort, ref, will } = useMemo(() => calculateStats(), [calculateStats]);
 
   return (
     <>
-      <StatCell>
+      <StatCell aria-label={`base attack bonus, ${bab}`} title="base attack bonus">
         {bab}
       </StatCell>
-      <StatCell>
+      <StatCell aria-label={`fortitude, ${fort}`} title="fortitude">
         {fort}
       </StatCell>
-      <StatCell>
+      <StatCell aria-label={`reflex, ${ref}`} title="reflex">
         {ref}
       </StatCell>
-      <StatCell>
+      <StatCell aria-label={`will, ${will}`} title="will">
         {will}
       </StatCell>
     </>

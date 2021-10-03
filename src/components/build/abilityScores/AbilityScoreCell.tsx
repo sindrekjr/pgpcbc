@@ -17,6 +17,7 @@ interface ScoreProps extends TableCellProps {
 const Score = styled(TableCell)<ScoreProps>`
   line-height: 1;
   text-align: center;
+  width: ${rem(21)};
 
   ${({ bonus }) => bonus && css`
     background: ${bonusColour};
@@ -49,11 +50,13 @@ const Button = styled.button`
 
 export interface AbilityScoreCellProps extends ScoreProps {
   score: number;
+  title: string;
   onSelect?: () => void;
 }
 
 export const AbilityScoreCell: FC<AbilityScoreCellProps> = ({
   score,
+  title,
   bonus,
   penalty,
   disabled,
@@ -61,11 +64,12 @@ export const AbilityScoreCell: FC<AbilityScoreCellProps> = ({
   onSelect,
 }) => (
   <Score
+    aria-label={`${title}, ${score}`}
+    title={title}
     bonus={bonus}
     penalty={penalty}
     disabled={disabled}
     selected={selected}
-    width={20}
   >
     <Button
       disabled={disabled}

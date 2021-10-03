@@ -1,15 +1,16 @@
 import React, { FC, useCallback } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import styled from 'styled-components';
+import { rem } from 'polished';
 
 import { Build, Character } from '../../models';
 import { buildState, raceState } from '../../state';
 import { LevelRow } from './level';
 
 const Table = styled.table`
-  width: 100%;
-
   th {
+    font-family: sans-serif;
+    font-size: ${rem(10)};
     text-align: left;
   }
 `;
@@ -78,13 +79,13 @@ export const BuildTable: FC<BuildTableProps> = ({ buildId, character }) => {
           <th />
           <th>Class</th>
           <th>Archetype</th>
-          <th colSpan={Object.keys(abilityScores).length} />
+          {Object.keys(abilityScores).map(a => <th key={a}>{a.toUpperCase()}</th>)}
           <th>Feats (general)</th>
           <th colSpan={2}>Feats (bonus)</th>
           <th>BAB</th>
-          <th>FORT</th>
-          <th>REF</th>
-          <th>WILL</th>
+          <th>Fort</th>
+          <th>Ref</th>
+          <th>Will</th>
           <th>Traits</th>
         </tr>
       </thead>
